@@ -1,75 +1,41 @@
 import React from 'react';
-import logo from '../imagenes/logo.ico';    
-import CarritoIcon from '@mui/icons-material/ShoppingCart';
+import logo from '../imagenes/logo.png';    
+import { Carrito } from './CartWidget';
+import { MenuNav } from './MenuNavBar';
+
+
+const categorias = [
+    { id: 0, nombre: 'Aridos' },
+    { id: 1, nombre: 'Bolsas' },
+    { id: 2, nombre: 'Hierros' },
+    { id: 3, nombre: 'Ladrrillos' },
+    { id: 4, nombre: 'Viguetas' },
+]
+
 const NavBar = () => {
     return(
         <header style={styles.container}>
             <img style={styles.imagen} src={logo} alt ="Logo Caramelos"/>
-            <h1>El mundo de las Golosinas</h1>
-            <nav style={styles.nav}>
-                <li style={styles.li}><a style={styles.links} href="#">Home</a></li>
-                <li style={styles.li}><a style={styles.links} href="#">Alfajores</a></li>
-                <li style={styles.li}><a style={styles.links} href="#">Caramelos</a></li>
-                <li style={styles.li}><a style={styles.links} href="#">Chocolates</a></li>
-                <li style={styles.li}><a style={styles.links} href="#">Galletitas</a></li>
-            </nav>
-            <div style={styles.carrito}>
-                <CarritoIcon style={styles.carritoIcon}/>
-                <div style={styles.carritoInfo}>
-                    <span id="idContadorCarrito">Carrito: 0</span>
-                    <span id="idContadorCarrito">Total: $0.00</span>
-                </div>
-            </div>
+            <h1 style={styles.titulo}>Materiales Universo</h1>
+            <MenuNav categorias={categorias}/>
+            <Carrito />
         </header>
     )
 }
-export default NavBar
 
 const styles = {
     container:{
         backgroundImage: 'linear-gradient(180deg, #ff7b00, yellow)',
         position: 'sticky',
         display: 'flex',
-        //alingitems: 'center',
+    },
+    titulo: {
+        marginLeft: 10,
+        color: 'white',
     },
     imagen:{
         width: '6%'
     },
-    nav:{        
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        width: '50%',
-        margin: 'auto',
-        position: 'sticky',
-        alignContent: 'center',
-    },
-    li:{
-        listStyle: 'none',
-        position: 'sticky',
-        alignContent: 'center',
-        top: 0,
-        padding: '13 15px -2',
-        margin: 0,
-        transition:  'transform 1s' ,
-    },
-    links:{
-        padding : 10,
-        textDecoration: 'none',
-    },
-    carrito: {        
-        display: 'flex',
-        flexDirection: 'row',
-        alignContent: 'center',        
-        margin: 'auto',
-        marginRight: '15px',
-    },
-    carritoIcon: {
-        paddingTop: '10',
-        paddingRight: '10',
-    },
-    carritoInfo: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignContent: 'center',
-    }
 }
+
+export default NavBar
