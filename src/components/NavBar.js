@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../imagenes/logo.png';    
-import { Carrito } from './CartWidget';
-import { MenuNav } from './MenuNavBar';
+import { CartWidget } from './CartWidget';
+import { MenuNavBar } from './MenuNavBar';
 
 
 const categorias = [
@@ -17,8 +17,8 @@ const NavBar = () => {
         <header style={styles.container}>
             <img style={styles.imagen} src={logo} alt ="Logo Caramelos"/>
             <h1 style={styles.titulo}>Materiales Universo</h1>
-            <MenuNav categorias={categorias}/>
-            <Carrito />
+            <MenuNavBar categorias={categorias}/>
+            <CartWidget />
         </header>
     )
 }

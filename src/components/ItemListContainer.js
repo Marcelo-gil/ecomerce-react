@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/main.css'
-export const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({greeting}) => {
     return (
         <section style={styles.container}>
             <h2 style={styles.titulo}>{greeting}</h2>
@@ -24,3 +24,4 @@ const styles = {
     }
 }
 
+export default ItemListContainer

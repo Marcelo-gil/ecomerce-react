@@ -1,7 +1,7 @@
 import React from 'react'
 import CarritoIcon from '@mui/icons-material/ShoppingCart';
 
-export const Carrito = () => {
+export const CartWidget = () => {
     return (
         <>
         <div style={styles.carrito}>
@@ -17,6 +17,7 @@ export const Carrito = () => {
         </>
     )
 }
+
 
 const styles = {
     carrito: {        

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const MenuNav = ({ categorias}) => {
+const MenuNavBar = ({ categorias}) => {
     return (
         <nav style={styles.nav}>
             <a style={styles.links} href="#">Home</a>
@@ -35,3 +35,4 @@ const styles = {
         textDecoration: 'none',
     },
 }
+export default MenuNavBar
