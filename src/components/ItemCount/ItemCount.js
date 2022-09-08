@@ -34,7 +34,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
         setContador(0);
         onAdd("Vaciaste el Carrito","info");
     }
-  
+
     const agregarCarrito = () => {
         if (contador!=0) {
             onAdd("Agregaste "+contador+" el Carrito","success");
@@ -44,20 +44,20 @@ const ItemCount = ({stock,initial,onAdd}) => {
     }
 
     return (
-      <>
-        {/* <div>ItemCount</div> */}
-        <img src={fotoImg} />
-        <div style={styles.container}>
-            <img src={sumarImg} style={styles.imagen} onClick={sumar}/>
-            <h1 style={styles.h1}>{contador}</h1>
-            <img src={restarImg} style={styles.imagen} onClick={restar}/>
-        </div>
-        <button style={styles.agregarCarrito} onClick={agregarCarrito}>agregar al carrito</button>
-      </>
+        <>
+            {/* <div>ItemCount</div> */}
+            <img src={fotoImg} />
+            <div style={styles.container}>
+                <img src={sumarImg} style={styles.imagen} onClick={sumar}/>
+                <h1 style={styles.h1}>{contador}</h1>
+                <img src={restarImg} style={styles.imagen} onClick={restar}/>
+            </div>
+            <button style={styles.agregarCarrito} onClick={agregarCarrito}>agregar al carrito</button>
+        </>
     )
-  }
-  
-  const styles = {
+}
+
+const styles = {
     container:{
         display: 'flex',
         textAling: 'center',
@@ -82,4 +82,4 @@ const ItemCount = ({stock,initial,onAdd}) => {
     }
 }
 
-  export default ItemCount
+export default ItemCount

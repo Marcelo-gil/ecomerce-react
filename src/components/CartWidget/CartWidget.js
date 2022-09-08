@@ -18,7 +18,6 @@ export const CartWidget = () => {
     )
 }
 
-
 const styles = {
     carrito: {        
     display: 'flex',
