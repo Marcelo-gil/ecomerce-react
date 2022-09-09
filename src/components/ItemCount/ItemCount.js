@@ -17,16 +17,9 @@ const ItemCount = ({stock,initial,onAdd}) => {
     }
 
     const restar = () => {
-        if (contador>0) {
+        if (contador>initial) {
             setContador(contador - 1);
-            if (contador==1) {
-                onAdd("Ya no tenes cantidad para sumar al carrito","warning");
-            }else {
-                onAdd("Te quedan "+(contador-1)+" para sumar al carrito","success");
-            }
-        } else {
-            //console.log("Stock en Cero");
-            onAdd("Cantidad en Cero","warning");
+            onAdd("Te quedan "+(contador-1)+" para sumar al carrito","success");
         }
     }
 
