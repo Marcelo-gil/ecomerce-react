@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import sumarImg from '../../imagenes/sumar.png'; 
 import restarImg from '../../imagenes/restar.png'; 
-import fotoImg from '../../imagenes/cementoln.jpg'; 
 
 const ItemCount = ({stock,initial,onAdd}) => {
 
@@ -23,27 +22,22 @@ const ItemCount = ({stock,initial,onAdd}) => {
         }
     }
 
-    const borrarCarrito = () => {
+    /* const borrarCarrito = () => {
         setContador(0);
         onAdd("Vaciaste el Carrito","info");
-    }
+    } */
 
     const agregarCarrito = () => {
-        if (contador!=0) {
-            onAdd("Agregaste "+contador+" el Carrito","success");
-        } else {
-            onAdd("Debes sumar para agregar al Carrito","warning");
-        }
+        onAdd("Agregaste "+contador+" el Carrito","success");
     }
 
     return (
         <>
             {/* <div>ItemCount</div> */}
-            <img src={fotoImg} />
             <div style={styles.container}>
-                <img src={sumarImg} style={styles.imagen} onClick={sumar}/>
+                <img src={sumarImg} style={styles.imagen} alt="sumar" onClick={sumar}/>
                 <h1 style={styles.h1}>{contador}</h1>
-                <img src={restarImg} style={styles.imagen} onClick={restar}/>
+                <img src={restarImg} style={styles.imagen} alt="restar" onClick={restar}/>
             </div>
             <button style={styles.agregarCarrito} onClick={agregarCarrito}>agregar al carrito</button>
         </>
@@ -54,6 +48,7 @@ const styles = {
     container:{
         display: 'flex',
         textAling: 'center',
+
     },
     agregarCarrito: {
         borderColor: 'black',
