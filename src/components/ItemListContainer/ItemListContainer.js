@@ -4,7 +4,7 @@ import ItemList from "../ItemList";
 import { Spinner , Text } from '@chakra-ui/react';
 
 const productos =[
-    {id: 0,nombre: 'Bolson de Arena', sku: 1,precio: 9500,stock: 5,initial: 1,imagenArt: "./arenabolson.jpg",categoria: 'aridos'}, 
+    {id: 0,nombre: 'Bolson de Arena', sku: 1,precio: 9500,stock: 2,initial: 1,imagenArt: "./arenabolson.jpg",categoria: 'aridos'}, 
     {id: 6,nombre: 'Cal cacique Max x 30 kg', sku: 2,precio: 959,stock: 8,initial: 1,imagenArt: "./calcasiquemax30.jpg",categoria: 'bolsas'},
     {id: 1,nombre: 'Cemento Loma Negra x 50 kg', sku: 3,precio: 1450,stock: 2,initial: 1,imagenArt: "./cementoln.jpg",categoria: 'bolsas'},
     {id: 3,nombre: 'Huecos 12X18X33 (6 Tubos)', sku: 4,precio: 110,stock: 4,initial: 1,imagenArt: "./hueco121833x6.jpg",categoria: 'ladrillos'}, 

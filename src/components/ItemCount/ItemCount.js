@@ -32,7 +32,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
                 <h1 style={styles.h1}>{contador}</h1>
                 <img src={restarImg} style={styles.imagen} alt="restar" onClick={restar}/>
             </div>
-            <button style={styles.agregarCarrito} onClick={agregarCarrito}>agregar al carrito</button>
+            <button style={styles.agregarCarrito} disabled={stock===0} onClick={agregarCarrito}>agregar al carrito</button>
         </>
     )
 }
