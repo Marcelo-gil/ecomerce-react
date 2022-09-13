@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../imagenes/logo.png';    
 import { CartWidget } from '../CartWidget/CartWidget';
 import MenuNavBar from './MenuNavBar';
-
+import { Text } from '@chakra-ui/react'
 
 const categorias = [
     { id: 0, nombre: 'Aridos' },
@@ -16,7 +16,7 @@ const NavBar = () => {
     return(
         <header style={styles.container}>
             <img style={styles.imagen} src={logo} alt ="Logo Caramelos"/>
-            <h1 style={styles.titulo}>Materiales Universo</h1>
+            <Text fontSize='4xl' style={styles.titulo}>Materiales Universo</Text>
             <MenuNavBar categorias={categorias}/>
             <CartWidget />
         </header>

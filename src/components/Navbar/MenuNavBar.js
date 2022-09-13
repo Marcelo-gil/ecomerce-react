@@ -4,7 +4,6 @@ const MenuNavBar = ({ categorias}) => {
     return (
         <nav style={styles.nav}>
             <a style={styles.links} href="#">Home</a>
-
             {categorias.map((categoria) => {
                 return <a key={categoria.id} style={styles.links} href=''>{categoria.nombre}</a>
             })}

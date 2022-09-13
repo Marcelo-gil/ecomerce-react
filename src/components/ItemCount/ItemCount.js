@@ -9,31 +9,24 @@ const ItemCount = ({stock,initial,onAdd}) => {
     const sumar = () => {
         if (contador<stock) {
             setContador(contador + 1);
-            onAdd("Tenes "+(contador+1)+" para sumar al carrito","success");
-        } else {
-            onAdd("Supera el stock","info");
         }
     }
 
     const restar = () => {
         if (contador>initial) {
             setContador(contador - 1);
-            onAdd("Te quedan "+(contador-1)+" para sumar al carrito","success");
         }
     }
 
-    /* const borrarCarrito = () => {
-        setContador(0);
-        onAdd("Vaciaste el Carrito","info");
-    } */
-
     const agregarCarrito = () => {
-        onAdd("Agregaste "+contador+" el Carrito","success");
+        /* chequeo Contador por si initial viene con valor 0 */
+        if (contador>0) {
+            onAdd(contador);
+        }
     }
 
     return (
         <>
-            {/* <div>ItemCount</div> */}
             <div style={styles.container}>
                 <img src={sumarImg} style={styles.imagen} alt="sumar" onClick={sumar}/>
                 <h1 style={styles.h1}>{contador}</h1>
@@ -54,16 +47,17 @@ const styles = {
         borderColor: 'black',
         backgroundColor: 'black',
         color: 'white',
-        borderRadius: '15px',
-        padding: '10px',
-        marginLeft: '50px',
+        borderRadius: '10px',
+        padding: '5px',
+        marginLeft: '16%',
     },
     imagen:{
-        marginLeft: '30px',
+        marginLeft: '10%',
     },
     h1:{
         marginLeft: '22px',
-        borderRadius: '55%',
+        borderRadius: '45%',
+        padding: '8px',
         borderColor: 'black',
         backgroundColor: 'black',
         color: 'white',

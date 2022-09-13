@@ -1,9 +1,7 @@
-import {React,useState, useEffect} from 'react'
+import {React , useState , useEffect} from 'react'
 import '../../css/main.css'
 import ItemList from "../ItemList";
-import swal from 'sweetalert';
-//import { Spinner } from '@chakra-ui/react';
-//import ItemCount from "../ItemCount/ItemCount";
+import { Spinner , Text } from '@chakra-ui/react';
 
 const productos =[
     {id: 0,nombre: 'Bolson de Arena', sku: 1,precio: 9500,stock: 5,initial: 1,imagenArt: "./arenabolson.jpg",categoria: 'aridos'}, 
@@ -37,22 +35,14 @@ const ItemListContainer = ({greeting}) => {
         .catch(()=>{console.log("No se cumplio la promesa")})
     }, [])
 
-    const onAdd = (count,tipoMensaje) => {
-        swal(count, "Atencion!!", tipoMensaje);
-    }
     return (
         <>
             <section style={styles.container}>
-                <h2 style={styles.titulo}>{greeting}</h2>
+                <Text fontSize='2xl' style={styles.titulo}>{greeting}</Text>
             </section>
-            {/* console.log(misProductos) */}
-            {/* <ItemCount stock={5} initial={1} onAdd={onAdd}/> */}
             <article style={styles.gridCards}>
                 {loading  ?
-                    <>
-                    {/* <Spinner  color='red.500'/>  */}
-                    <img src="https://c.tenor.com/qzuj7-PoJTcAAAAM/loading.gif" alt="Loading..." style={styles.imagen}/>
-                    </>
+                    <Spinner  color='red.500'/>
                 : 
                     <ItemList misProductos={misProductos} />
                 }
@@ -71,7 +61,7 @@ const styles = {
 
     gridCards: {
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr',
+        gridTemplateColumns: '1fr 1fr 1fr 1fr'
     },
     imagen:{
         width: '50%',
@@ -79,7 +69,6 @@ const styles = {
         marginLeft: '580px',
     },
     titulo:{
-        //animation: "10s alternate slidein",
         fontFamily: '',
         fontStyle: 'italic',
         color: '#ff7b00',
