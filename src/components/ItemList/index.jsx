@@ -1,10 +1,15 @@
 import Item from '../Item'
 
-const ItemList = ({ misProductos }) => {
+const ItemList = ({ misProductos, onItemClick }) => {
     return (
         <>
-            {misProductos.map((product,i) => <Item key={`${product.sku}-${i}`} 
-            producto={product}/>)}
+            {misProductos.map((product,i) => 
+                <Item 
+                    key={`${product.sku}-${i}`} 
+                    producto={product}
+                    onItemClick={onItemClick}
+                />
+            )}
         </>
     )
 }

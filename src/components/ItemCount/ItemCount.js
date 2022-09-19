@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import sumarImg from '../../imagenes/sumar.png'; 
 import restarImg from '../../imagenes/restar.png'; 
+import { Text , Stack, Flex, Image, Badge, Button } from '@chakra-ui/react';
 
 const ItemCount = ({stock,initial,onAdd}) => {
 
@@ -24,44 +25,25 @@ const ItemCount = ({stock,initial,onAdd}) => {
             onAdd(contador);
         }
     }
-
     return (
         <>
-            <div style={styles.container}>
-                <img src={sumarImg} style={styles.imagen} alt="sumar" onClick={sumar}/>
-                <h1 style={styles.h1}>{contador}</h1>
-                <img src={restarImg} style={styles.imagen} alt="restar" onClick={restar}/>
-            </div>
-            <button style={styles.agregarCarrito} disabled={stock===0} onClick={agregarCarrito}>agregar al carrito</button>
+            <Stack align="center">
+                <Flex>
+                <Image src={sumarImg} alt="Card Image" boxSize="40px" mt="15%" onClick={sumar}>
+                </Image>
+                <Badge variant="solid" colorScheme='blue'
+                    rounded="full" px={15} boxSize="40px" mt="15%" align="center">
+                    <Text fontSize='1xl' mt='100%' ml='5%'>{contador}</Text>
+                </Badge>
+                <Image src={restarImg} alt="restar" boxSize="40px" mt="15%" onClick={restar}>
+                </Image>
+                </Flex>
+            </Stack>
+            <Stack align="center">
+                <Button colorScheme='blackAlpha' disabled={stock===0} onClick={agregarCarrito}>agregar al carrito</Button>
+            </Stack>
         </>
     )
-}
-
-const styles = {
-    container:{
-        display: 'flex',
-        textAling: 'center',
-
-    },
-    agregarCarrito: {
-        borderColor: 'black',
-        backgroundColor: 'black',
-        color: 'white',
-        borderRadius: '10px',
-        padding: '5px',
-        marginLeft: '16%',
-    },
-    imagen:{
-        marginLeft: '10%',
-    },
-    h1:{
-        marginLeft: '22px',
-        borderRadius: '45%',
-        padding: '8px',
-        borderColor: 'black',
-        backgroundColor: 'black',
-        color: 'white',
-    }
 }
 
 export default ItemCount

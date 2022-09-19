@@ -5,18 +5,17 @@ import MenuNavBar from './MenuNavBar';
 import { Text } from '@chakra-ui/react'
 
 const categorias = [
-    { id: 0, nombre: 'Aridos' },
-    { id: 1, nombre: 'Bolsas' },
-    { id: 2, nombre: 'Hierros' },
-    { id: 3, nombre: 'Ladrrillos' },
-    { id: 4, nombre: 'Viguetas' },
+    { id: 0, nombre: "Men's clothing" },
+    { id: 1, nombre: 'Jewelery' },
+    { id: 2, nombre: 'Electronics' },
+    { id: 3, nombre: "Women's clothing" },
 ]
 
 const NavBar = () => {
     return(
         <header style={styles.container}>
-            <img style={styles.imagen} src={logo} alt ="Logo Caramelos"/>
-            <Text fontSize='4xl' style={styles.titulo}>Materiales Universo</Text>
+            <img style={styles.imagen} src={logo} alt ="Logo"/>
+            <Text fontSize='4xl' style={styles.titulo}>Fake Store</Text>
             <MenuNavBar categorias={categorias}/>
             <CartWidget />
         </header>
