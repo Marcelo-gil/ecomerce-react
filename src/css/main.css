@@ -1,10 +1,14 @@
 .body_bg {
-    background-image: url("../imagenes/textura-panal-abejas_1127-373.webp"); }
-  
+  background-image: url("../imagenes/textura-panal-abejas_1127-373.webp");
+}
+
 @keyframes slidein {
-    from {
-        margin-left: 100%;
-        width: 100%; }
-    to {
-        margin-left: 30%;
-        width: 100%; } }
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+  to {
+    margin-left: 30%;
+    width: 100%;
+  }
+}
