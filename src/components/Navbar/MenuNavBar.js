@@ -1,16 +1,13 @@
 import React from "react";
+import { NavLink, Link } from 'react-router-dom';
 
 const MenuNavBar = ({ categorias }) => {
   return (
     <nav style={styles.nav}>
-      <a style={styles.links} href="#">
-        Home
-      </a>
+      <Link style={styles.links} to="/">Home</Link>
       {categorias.map((categoria) => {
         return (
-          <a key={categoria.id} style={styles.links} href="">
-            {categoria.nombre}
-          </a>
+          <NavLink key={categoria.id} to={categoria.route} style={styles.links}>{categoria.nombre}</NavLink>
         );
       })}
     </nav>

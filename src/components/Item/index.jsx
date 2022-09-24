@@ -1,8 +1,9 @@
 import ItemCount from "../ItemCount/ItemCount";
 import swal from "sweetalert";
 import { Text, Box, Stack, Image } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-const Item = ({ producto, onItemClick }) => {
+const Item = ({ producto }) => {
   const onAdd = (count) => {
     swal(
       "Agregaste " + count + " " + producto.nombre + " al Carrito",
@@ -20,16 +21,15 @@ const Item = ({ producto, onItemClick }) => {
         bg={producto.stock < 1 ? "gray.700" : "gray.100"}
         mt={10}
       >
-        <Image
-          src={producto.imagenArt}
-          alt="Card Image"
-          boxSize="300px"
-          mt="10%"
-          cursor="pointer"
-          onClick={() => {
-            onItemClick(producto.id);
-          }}
-          ></Image>
+        <Link to={`/product/${producto.id}`}>
+          <Image
+            src={producto.imagenArt}
+            alt="Card Image"
+            boxSize="300px"
+            mt="10%"
+            cursor="pointer"
+          />
+        </Link>
         <Stack align="center">
           <Text fontSize="1xl" mt="20%" as="b">
             {producto.nombre}

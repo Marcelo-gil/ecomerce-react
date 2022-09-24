@@ -2,14 +2,22 @@ import { React, useState, useEffect } from "react";
 import "../../css/main.css";
 import ItemList from "../ItemList";
 import { Spinner, Text } from "@chakra-ui/react";
-import { accionAsincrona } from "../../utils";
+/*import { accionAsincrona } from "../../utils";*/
+import { useParams } from "react-router-dom";
+import { API } from "../../utils/api";
 
-const traerProductosApi = async () => {
-  const response = await fetch("https://fakestoreapi.com/products");
+/* url  fakestore */
+/*  const url = id ? `${API.CATEGORY}${id}` : API.LIST; */
+
+const traerProductosApi = async (id) => {
+  /* const idCat=id.substr(-1) */
+  const url = id ? `${API.CATEGORY}${id}/products` : API.LIST;
+  // const url = API.LIST;
+  const response = await fetch(url);
   const informacion = await response.json();
 
   /* delay de 2" de acuerdo a la consigna */
-  await accionAsincrona();
+  /* await accionAsincrona(); */
 
   let productosApi = [];
   let xid = 0;
@@ -26,28 +34,45 @@ const traerProductosApi = async () => {
       oferta: false,
       imagenMeli: true,
       novedad: false,
-      imagenArt: item.image,
+      imagenArt: item.images[0],
       rating: item.rating,
-      category: item.category,
+      category: item.category.id,
       descripcion: item.description,
     };
     xid += 1;
   });
   return productosApi;
 };
+
+const idsCategorias = {
+  "Clothes" : 1,
+  "Electronics" : 2,
+  "Furniture" : 3,
+  "Shoes" : 4,
+  "Others" : 5,
+};
+
 const ItemListContainer = ({ greeting, onItemClick }) => {
+  const { idCategoria: nombreCategoria } = useParams();
+
+  const idCategoria = idsCategorias[nombreCategoria];
+
   const [misProductos, setListadoProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    traerProductosApi()
-      .then((res) => {
-        setLoading(false);
+    setLoading(true);
+    traerProductosApi(idCategoria)
+      .then((res) => {        
         setListadoProductos(res);
       })
-      .catch(() => {
+      .catch((e) => {
         console.log("No se cumplio la promesa");
+      }).finally(() => {
+        setLoading(false);
       });
-  }, []);
+  }, [idCategoria]);
+
   return (
     <>
       <section style={styles.container}>

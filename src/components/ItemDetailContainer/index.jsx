@@ -3,10 +3,12 @@ import "../../css/main.css";
 import ItemDetail from "../ItemDetail";
 import { Spinner } from "@chakra-ui/react";
 import { accionAsincrona } from "../../utils";
+import { useParams } from "react-router-dom";
+import { API } from "../../utils/api";
 
 const getItem = async (prodBuscar) => {
   const response = await fetch(
-    `https://fakestoreapi.com/products/${prodBuscar}`
+    `${API.PRODUCTO}${prodBuscar}`
   );
   const item = await response.json();
 
@@ -25,18 +27,20 @@ const getItem = async (prodBuscar) => {
     oferta: false,
     imagenMeli: true,
     novedad: false,
-    imagenArt: item.image,
+    imagenArt: item.images[0],
     rating: item.rating,
-    category: item.category,
+    category: item.category.id,
     descripcion: item.description,
   };
   return producto;
 };
-const ItemDetailContainer = ({ idProducto, limpiarIdProducto }) => {
+const ItemDetailContainer = () => {
+  const { id } = useParams();
+  console.log(id);
   const [miProducto, setProducto] = useState({});
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    getItem(idProducto)
+    getItem(id)
       .then((res) => {
         setLoading(false);
         setProducto(res);
@@ -44,7 +48,7 @@ const ItemDetailContainer = ({ idProducto, limpiarIdProducto }) => {
       .catch(() => {
         console.log("No se cumplio la promesa");
       });
-  }, [idProducto]);
+  }, [id]);
   return (
     <>
       <article style={styles.gridCards}>
@@ -53,8 +57,7 @@ const ItemDetailContainer = ({ idProducto, limpiarIdProducto }) => {
         ) : (
           <ItemDetail
             item={miProducto}
-            idArt={idProducto}
-            limpiarIdProducto={limpiarIdProducto}
+            idArt={id}
           />
         )}
       </article>
