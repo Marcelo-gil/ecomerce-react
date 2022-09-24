@@ -23,8 +23,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<ItemListContainer greeting={mensaje} />}/>
           {/* <Route path='/category/:id' element={<ItemListContainer greeting={mensaje} onItemClick={onItemClick} />}/> */}
-          <Route path='/categories/:idCategoria' element={<ItemListContainer greeting={mensaje} />}/>
-          <Route path='/product/:id' element={ <ItemDetailContainer />}/>
+          <Route path='/category/:idCategoria' element={<ItemListContainer greeting={mensaje} />}/>
+          <Route path='/item/:id' element={ <ItemDetailContainer />}/>
           <Route path='/cart' element={<Cart />}/>
         </Routes>
         {/* {idProducto !== undefined ? (

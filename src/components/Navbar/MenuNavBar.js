@@ -22,6 +22,12 @@ const styles = {
     margin: "auto",
     position: "sticky",
     alignContent: "center",
+
+    gridCards: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr 1fr 1fr",
+    },
+
   },
   li: {
     listStyle: "none",

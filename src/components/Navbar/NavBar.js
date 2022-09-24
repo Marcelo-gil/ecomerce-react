@@ -12,23 +12,29 @@ import { Link } from "react-router-dom";
   { id: 3, nombre: "Women's clothing", route: "/category/women's clothing" },
 ]; */
 const categorias = [
-  { id: 1, nombre: "Clothes", route: "/categories/Clothes" },
-  { id: 2, nombre: "Electronics", route: "/categories/Electronics" },
-  { id: 3, nombre: "Furniture", route: "/categories/Furniture" },
-  { id: 4, nombre: "Shoes", route: "/categories/Shoes" },
-  { id: 5, nombre: "Others", route: "/categories/Others" },
+  { id: 1, nombre: "Clothes", route: "/category/Clothes" },
+  { id: 2, nombre: "Electronics", route: "/category/Electronics" },
+  { id: 3, nombre: "Furniture", route: "/category/Furniture" },
+  { id: 4, nombre: "Shoes", route: "/category/Shoes" },
+  { id: 5, nombre: "Others", route: "/category/Others" },
 ];
 const NavBar = () => {
   return (
     <header style={styles.container}>
-      <Link to="/">
-        <img style={styles.imagen} src={logo} alt="Logo" />
-        <Text fontSize="4xl" style={styles.titulo}>Fake Store</Text>
-      </Link>
+      <div style={styles.branchContainer}>
+        <Link to="/">
+          <img style={styles.imagen} src={logo} alt="Logo" />
+        </Link>
+      </div>
+      <div style={styles.branchContainer}>
+        <Text fontSize="3xl" style={styles.titulo}>Fake Store</Text>
+      </div>
       <MenuNavBar categorias={categorias} />
-      <Link to="/cart">
-          <CartWidget />
-      </Link>
+      <div style={styles.branchContainer}>
+        <Link to="/cart">
+            <CartWidget />
+        </Link>
+      </div>
     </header>
   );
 };
@@ -37,14 +43,21 @@ const styles = {
   container: {
     backgroundImage: "linear-gradient(180deg, #ff7b00, yellow)",
     position: "sticky",
+    /* display: "flex", */
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 5fr 1fr",
+  },
+  branchContainer: {
     display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   titulo: {
     marginLeft: 10,
     color: "white",
   },
   imagen: {
-    width: "6%",
+    width: "35%",
   },
 };
 

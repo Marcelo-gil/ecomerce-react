@@ -20,10 +20,11 @@ const Item = ({ producto }) => {
         overflow="hidden"
         bg={producto.stock < 1 ? "gray.700" : "gray.100"}
         mt={10}
+        ml={10}
       >
-        <Link to={`/product/${producto.id}`}>
+        <Link to={`/item/${producto.id}`}>
           <Image
-            src={producto.imagenArt}
+            src={producto.imagenArt[0]}
             alt="Card Image"
             boxSize="300px"
             mt="10%"

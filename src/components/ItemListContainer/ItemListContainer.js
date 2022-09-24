@@ -2,44 +2,17 @@ import { React, useState, useEffect } from "react";
 import "../../css/main.css";
 import ItemList from "../ItemList";
 import { Spinner, Text } from "@chakra-ui/react";
-/*import { accionAsincrona } from "../../utils";*/
 import { useParams } from "react-router-dom";
 import { API } from "../../utils/api";
+import { getProducto } from "../../utils/producto";
 
-/* url  fakestore */
-/*  const url = id ? `${API.CATEGORY}${id}` : API.LIST; */
-
-const traerProductosApi = async (id) => {
-  /* const idCat=id.substr(-1) */
+const getItems = async (id) => {
   const url = id ? `${API.CATEGORY}${id}/products` : API.LIST;
-  // const url = API.LIST;
   const response = await fetch(url);
   const informacion = await response.json();
-
-  /* delay de 2" de acuerdo a la consigna */
-  /* await accionAsincrona(); */
-
   let productosApi = [];
-  let xid = 0;
-  let xstock = 0;
   informacion.forEach((item) => {
-    xstock = Math.floor(Math.random() * (10 - 2) + 2);
-    productosApi[xid] = {
-      id: item.id,
-      nombre: item.title.toUpperCase(),
-      sku: item.id,
-      precio: item.price,
-      stock: xstock,
-      initial: 1,
-      oferta: false,
-      imagenMeli: true,
-      novedad: false,
-      imagenArt: item.images[0],
-      rating: item.rating,
-      category: item.category.id,
-      descripcion: item.description,
-    };
-    xid += 1;
+    productosApi.push(getProducto(item));
   });
   return productosApi;
 };
@@ -62,7 +35,7 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
 
   useEffect(() => {
     setLoading(true);
-    traerProductosApi(idCategoria)
+    getItems(idCategoria)
       .then((res) => {        
         setListadoProductos(res);
       })
@@ -76,7 +49,7 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
   return (
     <>
       <section style={styles.container}>
-        <Text fontSize="2xl" style={styles.titulo}>
+        <Text fontSize="3xl" style={styles.titulo}>
           {greeting}
         </Text>
       </section>
@@ -110,7 +83,7 @@ const styles = {
   titulo: {
     fontFamily: "",
     fontStyle: "italic",
-    color: "#ff7b00",
+    color: "black",
   },
 };
 
