@@ -7,14 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const mensaje = "Tu tienda de moda online!!!";
 const App = () => {
-  /* const [idProducto, setIdProducto] = useState(undefined);
-  const onItemClick = (idArt) => {
-    setIdProducto(idArt);
-  }; */
-
-  /* const limpiarIdProducto = () => {
-    setIdProducto(undefined);
-  }; */
 
   return (
     <BrowserRouter>
@@ -22,19 +14,10 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path='/' element={<ItemListContainer greeting={mensaje} />}/>
-          {/* <Route path='/category/:id' element={<ItemListContainer greeting={mensaje} onItemClick={onItemClick} />}/> */}
           <Route path='/category/:idCategoria' element={<ItemListContainer greeting={mensaje} />}/>
           <Route path='/item/:id' element={ <ItemDetailContainer />}/>
           <Route path='/cart' element={<Cart />}/>
         </Routes>
-        {/* {idProducto !== undefined ? (
-          <ItemDetailContainer
-            idProducto={idProducto}
-            limpiarIdProducto={limpiarIdProducto}
-          />
-        ) : (
-          <ItemListContainer greeting={mensaje} onItemClick={onItemClick} />
-        )} */}
       </ChakraProvider>
     </BrowserRouter>
   );

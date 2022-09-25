@@ -18,11 +18,11 @@ const getItems = async (id) => {
 };
 
 const idsCategorias = {
-  "Clothes" : 1,
-  "Electronics" : 2,
-  "Furniture" : 3,
-  "Shoes" : 4,
-  "Others" : 5,
+  "clothes" : 1,
+  "electronics" : 2,
+  "furniture" : 3,
+  "shoes" : 4,
+  "others" : 5,
 };
 
 const ItemListContainer = ({ greeting, onItemClick }) => {

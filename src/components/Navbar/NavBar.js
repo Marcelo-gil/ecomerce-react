@@ -5,18 +5,12 @@ import MenuNavBar from "./MenuNavBar";
 import { Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-/* const categorias = [
-  { id: 0, nombre: "Men's clothing", route: "/category/men's clothing" },
-  { id: 1, nombre: "Jewelery", route: "/category/jewelery" },
-  { id: 2, nombre: "Electronics", route: "/category/electronics" },
-  { id: 3, nombre: "Women's clothing", route: "/category/women's clothing" },
-]; */
 const categorias = [
-  { id: 1, nombre: "Clothes", route: "/category/Clothes" },
-  { id: 2, nombre: "Electronics", route: "/category/Electronics" },
-  { id: 3, nombre: "Furniture", route: "/category/Furniture" },
-  { id: 4, nombre: "Shoes", route: "/category/Shoes" },
-  { id: 5, nombre: "Others", route: "/category/Others" },
+  { id: 1, nombre: "Clothes", route: "/category/clothes" },
+  { id: 2, nombre: "Electronics", route: "/category/electronics" },
+  { id: 3, nombre: "Furniture", route: "/category/furniture" },
+  { id: 4, nombre: "Shoes", route: "/category/shoes" },
+  { id: 5, nombre: "Others", route: "/category/others" },
 ];
 const NavBar = () => {
   return (
@@ -43,7 +37,6 @@ const styles = {
   container: {
     backgroundImage: "linear-gradient(180deg, #ff7b00, yellow)",
     position: "sticky",
-    /* display: "flex", */
     display: "grid",
     gridTemplateColumns: "1fr 1fr 5fr 1fr",
   },

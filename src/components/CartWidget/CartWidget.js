@@ -11,11 +11,6 @@ export const CartWidget = () => {
           <span id="idContadorCarrito">Total: $0.00</span>
         </div>
       </div>
-      <div style={styles.borrarCarritoContainer}>
-        <button style={styles.borrarCarrito} id="vaciarCarrito">
-          Vaciar el carrito
-        </button>
-      </div>
     </>
   );
 };
