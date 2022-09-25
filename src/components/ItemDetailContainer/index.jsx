@@ -7,9 +7,7 @@ import { API } from "../../utils/api";
 import { getProducto } from "../../utils/producto";
 
 const getItem = async (prodBuscar) => {
-  const response = await fetch(
-    `${API.PRODUCTO}${prodBuscar}`
-  );
+  const response = await fetch(`${API.PRODUCTO}${prodBuscar}`);
   const item = await response.json();
   return getProducto(item);
 };
@@ -34,10 +32,7 @@ const ItemDetailContainer = () => {
         {loading ? (
           <Spinner color="red.500" />
         ) : (
-          <ItemDetail
-            item={miProducto}
-            idArt={id}
-          />
+          <ItemDetail item={miProducto} idArt={id} />
         )}
       </article>
     </>

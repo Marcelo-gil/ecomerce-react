@@ -4,8 +4,7 @@ import swal from "sweetalert";
 import { Text, Stack, Box, Image, Badge, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-
-const ItemDetail = ({ item  }) => {
+const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
   const onAdd = (count) => {
     swal(
@@ -25,7 +24,7 @@ const ItemDetail = ({ item  }) => {
         mt={10}
         ml={10}
       >
-      <Image
+        <Image
           src={item.imagenArt[0]}
           alt="Card Image"
           boxSize="300px"
@@ -42,7 +41,7 @@ const ItemDetail = ({ item  }) => {
         mt={10}
         ml={5}
       >
-      <Image
+        <Image
           src={item.imagenArt[1]}
           alt="Card Image"
           boxSize="300px"
@@ -59,7 +58,7 @@ const ItemDetail = ({ item  }) => {
         mt={10}
         ml={5}
       >
-      <Image
+        <Image
           src={item.imagenArt[2]}
           alt="Card Image"
           boxSize="300px"
@@ -75,7 +74,7 @@ const ItemDetail = ({ item  }) => {
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
         mt={10}
         ml="5"
-        >
+      >
         <Stack align="center">
           <Text fontSize="1xl" mt="20%" as="b" ml="5%">
             {item.nombre}
@@ -124,7 +123,12 @@ const ItemDetail = ({ item  }) => {
           <ItemCount stock={item.stock} initial={item.initial} onAdd={onAdd} />
         </Stack>
         <Stack align="center" mt="10">
-          <Button onClick={() => navigate(-1)} to='/' colorScheme="blackAlpha" mt="5">
+          <Button
+            onClick={() => navigate(-1)}
+            to="/"
+            colorScheme="blackAlpha"
+            mt="5"
+          >
             Volver a la tienda
           </Button>
         </Stack>

@@ -18,11 +18,11 @@ const getItems = async (id) => {
 };
 
 const idsCategorias = {
-  "clothes" : 1,
-  "electronics" : 2,
-  "furniture" : 3,
-  "shoes" : 4,
-  "others" : 5,
+  clothes: 1,
+  electronics: 2,
+  furniture: 3,
+  shoes: 4,
+  others: 5,
 };
 
 const ItemListContainer = ({ greeting, onItemClick }) => {
@@ -36,12 +36,13 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
   useEffect(() => {
     setLoading(true);
     getItems(idCategoria)
-      .then((res) => {        
+      .then((res) => {
         setListadoProductos(res);
       })
       .catch((e) => {
         console.log("No se cumplio la promesa");
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, [idCategoria]);

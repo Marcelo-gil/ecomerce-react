@@ -1,13 +1,17 @@
 import React from "react";
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link } from "react-router-dom";
 
 const MenuNavBar = ({ categorias }) => {
   return (
     <nav style={styles.nav}>
-      <Link style={styles.links} to="/">Home</Link>
+      <Link style={styles.links} to="/">
+        Home
+      </Link>
       {categorias.map((categoria) => {
         return (
-          <NavLink key={categoria.id} to={categoria.route} style={styles.links}>{categoria.nombre}</NavLink>
+          <NavLink key={categoria.id} to={categoria.route} style={styles.links}>
+            {categoria.nombre}
+          </NavLink>
         );
       })}
     </nav>
@@ -27,7 +31,6 @@ const styles = {
       display: "grid",
       gridTemplateColumns: "1fr 1fr 1fr 1fr",
     },
-
   },
   li: {
     listStyle: "none",

@@ -2,11 +2,11 @@
 
 Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHouse".
 
-  # Navegación
+# Navegación
 
     Home con todos los productos
     Categorías con acceso a los productos de la misma
-    Carrito 
+    Carrito
     Detalle de Productos
 
 El usuario puede acceder al detalle del producto haciendo click en la foto del mismo, en donde encontrara 3 imágenes, nombre, precio, descripción, stock disponible y la posibilidad de agregar productos al carrito o volver a la tienda.
@@ -21,8 +21,7 @@ Cualquier modificación en el código, se verá reflejado aquí.
 # Api
 
 Se está utilizando la Api de https://api.escuelajs.co/api/v1/ para acceder a los productos (esta api tiene una falla, en general no coinciden las fotos con el nombre de los productos)
-(originalmente usaba "fakestoreapi.com" pero esta caída) 
- 
+(originalmente usaba "fakestoreapi.com" pero esta caída)
 
 # Documentación de React
 

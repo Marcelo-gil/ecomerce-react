@@ -21,12 +21,14 @@ const NavBar = () => {
         </Link>
       </div>
       <div style={styles.branchContainer}>
-        <Text fontSize="3xl" style={styles.titulo}>Fake Store</Text>
+        <Text fontSize="3xl" style={styles.titulo}>
+          Fake Store
+        </Text>
       </div>
       <MenuNavBar categorias={categorias} />
       <div style={styles.branchContainer}>
         <Link to="/cart">
-            <CartWidget />
+          <CartWidget />
         </Link>
       </div>
     </header>
