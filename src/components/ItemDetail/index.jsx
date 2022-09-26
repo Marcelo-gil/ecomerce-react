@@ -1,12 +1,14 @@
-import React from "react";
+import {React, useState} from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import swal from "sweetalert";
 import { Text, Stack, Box, Image, Badge, Button } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
+  const [finCompra, setFinCompra] = useState(false);
   const onAdd = (count) => {
+    setFinCompra(true);
     swal(
       "Agregaste " + count + " " + item.nombre + " al Carrito",
       "Atencion!!",
@@ -119,19 +121,38 @@ const ItemDetail = ({ item }) => {
             Stock: {item.stock}
           </Badge>
         </Stack>
-        <Stack align="center" mt="20">
-          <ItemCount stock={item.stock} initial={item.initial} onAdd={onAdd} />
-        </Stack>
-        <Stack align="center" mt="10">
-          <Button
-            onClick={() => navigate(-1)}
-            to="/"
-            colorScheme="blackAlpha"
-            mt="5"
-          >
-            Volver a la tienda
-          </Button>
-        </Stack>
+        { finCompra ? (
+        <>
+          <Stack align="center" mt="10">
+            <Link
+              to="/cart"
+            >
+              <Button                            
+                colorScheme="blackAlpha"
+                mt="5"
+              >
+                Finalizar Compra
+              </Button>
+            </Link>
+          </Stack>
+        </>
+      ):(
+        <>
+          <Stack align="center" mt="20">
+            <ItemCount stock={item.stock} initial={item.initial} onAdd={onAdd} />
+          </Stack>
+          <Stack align="center" mt="10">
+            <Button
+              onClick={() => navigate(-1)}
+              to="/"
+              colorScheme="blackAlpha"
+              mt="5"
+            >
+              Volver a la tienda
+            </Button>
+          </Stack>
+        </>
+      )}
       </Box>
     </>
   );

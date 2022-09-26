@@ -54,6 +54,7 @@ const styles = {
   imagen: {
     width: "35%",
   },
+  
 };
 
 export default NavBar;

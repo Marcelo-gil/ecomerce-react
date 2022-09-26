@@ -28,13 +28,13 @@ const ItemDetailContainer = () => {
   }, [id]);
   return (
     <>
-      <article style={styles.gridCards}>
-        {loading ? (
-          <Spinner color="red.500" />
-        ) : (
-          <ItemDetail item={miProducto} idArt={id} />
-        )}
-      </article>
+        <article style={styles.gridCards}>
+          {loading ? (
+            <Spinner color="red.500" />
+          ) : (
+            <ItemDetail item={miProducto} idArt={id} />
+          )}
+        </article>
     </>
   );
 };
@@ -47,8 +47,8 @@ const styles = {
   },
 
   gridCards: {
-    display: "grid",
-    gridTemplateColumns: "0.75fr 0.75fr 0.75fr 1fr  1fr  1fr 0.5fr",
+     display: "grid", 
+    gridTemplateColumns: "0.75fr 0.75fr 0.75fr 1fr  1fr ",
   },
   imagen: {
     width: "50%",
