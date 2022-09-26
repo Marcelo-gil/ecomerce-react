@@ -11,6 +11,10 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
 
 El usuario puede acceder al detalle del producto haciendo click en la foto del mismo, en donde encontrara 3 imágenes, nombre, precio, descripción, stock disponible y la posibilidad de agregar productos al carrito o volver a la tienda.
 
+Link al gif de navegación:
+
+https://drive.google.com/file/d/1nOq6pyrib68VGPYJdDiGLogbA7t1pnX-/view?usp=sharing
+
 # Ejecucion del proyecto:
 
 `npm run start`
