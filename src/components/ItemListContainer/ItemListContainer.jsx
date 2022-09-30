@@ -54,7 +54,7 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
           {greeting}
         </Text>
       </section>
-      <SimpleGrid minChildWidth='300px' spacing='10px'>
+      <SimpleGrid minChildWidth="300px" spacing="10px">
         {loading ? (
           <Spinner color="red.500" />
         ) : (

@@ -12,7 +12,8 @@ const Item = ({ producto }) => {
           overflow="hidden"
           bg={producto.stock < 1 ? "gray.700" : "gray.100"}
           mt={10}
-          ml={10}>
+          ml={10}
+        >
           <Image
             src={producto.imagenArt[0]}
             alt="Card Image"

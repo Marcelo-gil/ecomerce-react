@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import CarritoIcon from "@mui/icons-material/ShoppingCart";
+import { CartContext } from "../../Context/CartContext";
 
 export const CartWidget = () => {
+  const { cantidad } = useContext(CartContext);
   return (
     <>
       <div style={styles.carrito}>
         <CarritoIcon style={styles.carritoIcon} />
-        <div style={styles.carritoInfo}>
-          <span id="idContadorCarrito">0</span>
-        </div>
+        <div style={styles.carritoInfo}>{cantidad}</div>
       </div>
     </>
   );

@@ -3,17 +3,17 @@ import ItemCount from "../ItemCount/ItemCount";
 import swal from "sweetalert";
 import { Text, Stack, Box, Badge, Button } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { CartContext } from '../../CartContext/CartContext'
+import { CartContext } from "../../Context/CartContext";
 import { Carousel } from "react-carousel-minimal";
 
 const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
   const [finCompra, setFinCompra] = useState(false);
   const { addItem } = useContext(CartContext);
-  
+
   const onAdd = (count) => {
     setFinCompra(true);
-    addItem(item,count);
+    addItem(item, count);
     swal(
       "Agregaste " + count + " " + item.nombre + " al Carrito",
       "Atencion!!",
@@ -22,30 +22,26 @@ const ItemDetail = ({ item }) => {
   };
 
   const carouselData = item.imagenArt.map((image) => ({
-    image
+    image,
   }));
 
-  return (    
+  return (
     <>
       <Box
-        rounded="20px"             
+        rounded="20px"
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
         mt={10}
         ml="5"
         mr="5"
       >
-        <Carousel 
-          data={
-            carouselData
-          }          
+        <Carousel
+          data={carouselData}
           thumbnailWidth="150px"
           thumbnails={true}
         />
       </Box>
 
       <Box
-        // w="300px"
-        // h="450px"
         rounded="20px"
         overflow="scroll"
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
@@ -72,8 +68,6 @@ const ItemDetail = ({ item }) => {
       </Box>
 
       <Box
-        // w="300px"
-        // h="450px"
         rounded="20px"
         align="center"
         mt={10}
@@ -130,7 +124,7 @@ const ItemDetail = ({ item }) => {
           </>
         )}
       </Box>
-    </>    
+    </>
   );
 };
 

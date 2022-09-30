@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
   }, [id]);
   return (
     <>
-      <SimpleGrid minChildWidth='300px' spacing='10px'>
+      <SimpleGrid minChildWidth="300px" spacing="10px">
         {loading ? (
           <Spinner color="red.500" />
         ) : (
@@ -38,7 +38,5 @@ const ItemDetailContainer = () => {
     </>
   );
 };
-
-
 
 export default ItemDetailContainer;
