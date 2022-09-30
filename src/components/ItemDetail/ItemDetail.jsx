@@ -1,9 +1,10 @@
 import { React, useState, useContext } from "react";
-import ItemCount from "../ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import swal from "sweetalert";
-import { Text, Stack, Box, Image, Badge, Button } from "@chakra-ui/react";
+import { Text, Stack, Box, Badge, Button } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { CartContext } from '../../CartContext'
+import { CartContext } from '../../CartContext/CartContext'
+import { Carousel } from "react-carousel-minimal";
 
 const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
@@ -19,67 +20,38 @@ const ItemDetail = ({ item }) => {
       "success"
     );
   };
-  return (
+
+  const carouselData = item.imagenArt.map((image) => ({
+    image
+  }));
+
+  return (    
     <>
       <Box
-        w="250px"
-        h="450px"
-        rounded="20px"
-        overflow="hidden"
+        rounded="20px"             
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
         mt={10}
-        ml={10}
+        ml="5"
+        mr="5"
       >
-        <Image
-          src={item.imagenArt[0]}
-          alt="Card Image"
-          boxSize="300px"
-          mt="35%"
+        <Carousel 
+          data={
+            carouselData
+          }          
+          thumbnailWidth="150px"
+          thumbnails={true}
         />
       </Box>
 
       <Box
-        w="250px"
-        h="450px"
-        rounded="20px"
-        overflow="hidden"
-        bg={item.stock < 1 ? "gray.700" : "gray.100"}
-        mt={10}
-        ml={5}
-      >
-        <Image
-          src={item.imagenArt[1]}
-          alt="Card Image"
-          boxSize="300px"
-          mt="35%"
-        />
-      </Box>
-
-      <Box
-        w="250px"
-        h="450px"
-        rounded="20px"
-        overflow="hidden"
-        bg={item.stock < 1 ? "gray.700" : "gray.100"}
-        mt={10}
-        ml={5}
-      >
-        <Image
-          src={item.imagenArt[2]}
-          alt="Card Image"
-          boxSize="300px"
-          mt="35%"
-        />
-      </Box>
-
-      <Box
-        w="300px"
-        h="450px"
+        // w="300px"
+        // h="450px"
         rounded="20px"
         overflow="scroll"
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
         mt={10}
         ml="5"
+        mr="5"
       >
         <Stack align="center">
           <Text fontSize="1xl" mt="20%" as="b" ml="5%">
@@ -100,14 +72,15 @@ const ItemDetail = ({ item }) => {
       </Box>
 
       <Box
-        w="300px"
-        h="450px"
+        // w="300px"
+        // h="450px"
         rounded="20px"
         align="center"
         mt={10}
         overflow="hidden"
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
         ml="5"
+        mr="5"
       >
         <Stack align="center" mt={10}>
           {item.stock > 0 ? (
@@ -157,7 +130,7 @@ const ItemDetail = ({ item }) => {
           </>
         )}
       </Box>
-    </>
+    </>    
   );
 };
 

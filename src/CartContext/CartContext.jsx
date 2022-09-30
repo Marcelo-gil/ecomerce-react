@@ -7,7 +7,6 @@ const CartProvider = ({ children }) => {
 
   const addItem = (producto, cantidad) => {
     const isInCart = carrito.findIndex((itemCart) => itemCart.producto.id === producto.id)
-    console.log(isInCart);
     if (isInCart !== -1) {
         const carritoCopia = carrito.filter(producto => producto !==carrito[isInCart])
         setCarrito([...carritoCopia, { producto, cantidad }]);

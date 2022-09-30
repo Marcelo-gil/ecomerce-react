@@ -1,8 +1,8 @@
 import React from "react";
 import logo from "../../imagenes/logo.png";
-import { CartWidget } from "../CartWidget";
-import MenuNavBar from "../../MenuNavBar";
-import { Text } from "@chakra-ui/react";
+import { CartWidget } from "../CartWidget/CartWidget";
+import MenuNavBar from "../../MenuNavBar/MenuNavBar";
+import { Text, Stack, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const categorias = [
@@ -14,10 +14,20 @@ const categorias = [
 ];
 const NavBar = () => {
   return (
-    <header style={styles.container}>
+    
+    <Stack
+  spacing={8}
+  align="center"
+  justify={["center", "space-between", "flex-end", "flex-end"]}
+  direction={["column", "row", "row", "row"]}
+  pt={[4, 4, 0, 0]}
+>
       <div style={styles.branchContainer}>
         <Link to="/">
-          <img style={styles.imagen} src={logo} alt="Logo" />
+          <Image     
+            boxSize='50px'    
+            objectFit='cover'
+            src={logo} alt="Logo" />
         </Link>
       </div>
       <div style={styles.branchContainer}>
@@ -31,7 +41,7 @@ const NavBar = () => {
           <CartWidget />
         </Link>
       </div>
-    </header>
+   </Stack>
   );
 };
 

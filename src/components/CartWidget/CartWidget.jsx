@@ -7,8 +7,7 @@ export const CartWidget = () => {
       <div style={styles.carrito}>
         <CarritoIcon style={styles.carritoIcon} />
         <div style={styles.carritoInfo}>
-          <span id="idContadorCarrito">Carrito: 0</span>
-          <span id="idContadorCarrito">Total: $0.00</span>
+          <span id="idContadorCarrito">0</span>
         </div>
       </div>
     </>

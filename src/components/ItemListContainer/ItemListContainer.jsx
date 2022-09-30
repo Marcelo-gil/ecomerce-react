@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "../../css/main.css";
-import ItemList from "../ItemList";
-import { Spinner, Text } from "@chakra-ui/react";
+import ItemList from "../ItemList/ItemList";
+import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { API } from "../../utils/api";
 import { getProducto } from "../../utils/producto";
@@ -54,13 +54,13 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
           {greeting}
         </Text>
       </section>
-      <article style={styles.gridCards}>
+      <SimpleGrid minChildWidth='300px' spacing='10px'>
         {loading ? (
           <Spinner color="red.500" />
         ) : (
           <ItemList misProductos={misProductos} onItemClick={onItemClick} />
         )}
-      </article>
+      </SimpleGrid>
     </>
   );
 };
@@ -72,15 +72,6 @@ const styles = {
     textAling: "center",
   },
 
-  gridCards: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr 1fr",
-  },
-  imagen: {
-    width: "50%",
-    height: "50%",
-    marginLeft: "580px",
-  },
   titulo: {
     fontFamily: "",
     fontStyle: "italic",

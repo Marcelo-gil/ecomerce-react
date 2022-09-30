@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
-import "../../css/main.css";
-import ItemDetail from "../ItemDetail";
-import { Spinner } from "@chakra-ui/react";
+//import "../../css/main.css";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { SimpleGrid, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { API } from "../../utils/api";
 import { getProducto } from "../../utils/producto";
@@ -28,38 +28,17 @@ const ItemDetailContainer = () => {
   }, [id]);
   return (
     <>
-      <article style={styles.gridCards}>
+      <SimpleGrid minChildWidth='300px' spacing='10px'>
         {loading ? (
           <Spinner color="red.500" />
         ) : (
           <ItemDetail item={miProducto} idArt={id} />
         )}
-      </article>
+      </SimpleGrid>
     </>
   );
 };
 
-const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    textAling: "center",
-  },
 
-  gridCards: {
-    display: "grid",
-    gridTemplateColumns: "0.75fr 0.75fr 0.75fr 1fr  1fr ",
-  },
-  imagen: {
-    width: "50%",
-    height: "50%",
-    marginLeft: "580px",
-  },
-  titulo: {
-    fontFamily: "",
-    fontStyle: "italic",
-    color: "#ff7b00",
-  },
-};
 
 export default ItemDetailContainer;

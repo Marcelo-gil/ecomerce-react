@@ -1,10 +1,10 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import NavBar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
-import Cart from "./components/CartView";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/CartView/CartView";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CartProvider from "./CartContext";
+import CartProvider from "./CartContext/CartContext";
+import Navbar from "./components/Navbar/Navbar";
 
 const mensaje = "Tu tienda de moda online!!!";
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
     <BrowserRouter>
       <CartProvider>
         <ChakraProvider>
-          <NavBar />
+          <Navbar />
           <Routes>
             <Route path="/" element={<ItemListContainer greeting={mensaje} />} />
             <Route
