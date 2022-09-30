@@ -1,14 +1,18 @@
-import { React, useState } from "react";
-import ItemCount from "../ItemCount/ItemCount";
+import { React, useState, useContext } from "react";
+import ItemCount from "../ItemCount";
 import swal from "sweetalert";
 import { Text, Stack, Box, Image, Badge, Button } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from '../../CartContext'
 
 const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
   const [finCompra, setFinCompra] = useState(false);
+  const { addItem } = useContext(CartContext);
+  
   const onAdd = (count) => {
     setFinCompra(true);
+    addItem(item,count);
     swal(
       "Agregaste " + count + " " + item.nombre + " al Carrito",
       "Atencion!!",
@@ -19,7 +23,7 @@ const ItemDetail = ({ item }) => {
     <>
       <Box
         w="250px"
-        h="500px"
+        h="450px"
         rounded="20px"
         overflow="hidden"
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
@@ -36,7 +40,7 @@ const ItemDetail = ({ item }) => {
 
       <Box
         w="250px"
-        h="500px"
+        h="450px"
         rounded="20px"
         overflow="hidden"
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
@@ -53,7 +57,7 @@ const ItemDetail = ({ item }) => {
 
       <Box
         w="250px"
-        h="500px"
+        h="450px"
         rounded="20px"
         overflow="hidden"
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
@@ -70,7 +74,7 @@ const ItemDetail = ({ item }) => {
 
       <Box
         w="300px"
-        h="550px"
+        h="450px"
         rounded="20px"
         overflow="scroll"
         bg={item.stock < 1 ? "gray.700" : "gray.100"}
@@ -97,7 +101,7 @@ const ItemDetail = ({ item }) => {
 
       <Box
         w="300px"
-        h="550px"
+        h="450px"
         rounded="20px"
         align="center"
         mt={10}

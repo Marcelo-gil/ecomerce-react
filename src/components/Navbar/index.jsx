@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../imagenes/logo.png";
-import { CartWidget } from "../CartWidget/CartWidget";
-import MenuNavBar from "./MenuNavBar";
+import { CartWidget } from "../CartWidget";
+import MenuNavBar from "../../MenuNavBar";
 import { Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
