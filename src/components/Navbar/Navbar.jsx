@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Flex,
@@ -10,7 +11,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-
 import logo from "../../imagenes/logo.png";
 import { CartWidget } from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
@@ -26,7 +26,6 @@ const categorias = [
 
 export default function NuevoNavbar() {
   const { isOpen, onToggle } = useDisclosure();
-
   return (
     <Box>
       <Flex
@@ -71,14 +70,13 @@ export default function NuevoNavbar() {
             <DesktopNav />
           </Flex>
         </Flex>
-
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
           spacing={6}
         >
-          <Link to="/cart">
+          <Link to= "/cart">
             <CartWidget />
           </Link>
         </Stack>

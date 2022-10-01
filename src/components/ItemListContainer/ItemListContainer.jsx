@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "../../css/main.css";
 import ItemList from "../ItemList/ItemList";
-import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import { SimpleGrid, Spinner, Stack, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { API } from "../../utils/api";
 import { getProducto } from "../../utils/producto";
@@ -49,11 +49,11 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
 
   return (
     <>
-      <section style={styles.container}>
+      <Stack align="center">
         <Text fontSize="3xl" style={styles.titulo}>
           {greeting}
         </Text>
-      </section>
+      </Stack>
       <SimpleGrid minChildWidth="300px" spacing="10px">
         {loading ? (
           <Spinner color="red.500" />
@@ -66,12 +66,6 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
 };
 
 const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    textAling: "center",
-  },
-
   titulo: {
     fontFamily: "",
     fontStyle: "italic",
