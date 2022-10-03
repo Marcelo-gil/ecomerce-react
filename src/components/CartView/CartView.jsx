@@ -41,29 +41,29 @@ const Cart = () => {
               ))}
           </Tbody>
           <Tfoot>
-              {totalCarrito === 0 ? (
-                  <Tr>
-                  <Th boxSize="50px"></Th>
-                    <Th>
-                      <Text fontSize="20px">No quedan Articulos en el Carrito</Text>
-                      <Link to="/">
-                        <Button colorScheme="blackAlpha" mt="5">
-                          Volver a la tienda
-                        </Button>
-                      </Link>
-                      <Button
-                        onClick={() => navigate(-1)}
-                        to="/"
-                        colorScheme="blackAlpha"
-                        mt="5"
-                        ml="5"
-                        >
-                        Ultimo Articulo
-                      </Button>
-                    </Th>
-                  </Tr>
-              ) : (
-                <>
+            {totalCarrito === 0 ? (
+              <Tr>
+                <Th boxSize="50px"></Th>
+                <Th>
+                  <Text fontSize="20px">No quedan Articulos en el Carrito</Text>
+                  <Link to="/">
+                    <Button colorScheme="blackAlpha" mt="5">
+                      Volver a la tienda
+                    </Button>
+                  </Link>
+                  <Button
+                    onClick={() => navigate(-1)}
+                    to="/"
+                    colorScheme="blackAlpha"
+                    mt="5"
+                    ml="5"
+                  >
+                    Ultimo Articulo
+                  </Button>
+                </Th>
+              </Tr>
+            ) : (
+              <>
                 <Tr>
                   <Th boxSize="50px"></Th>
                   <Th></Th>
@@ -75,8 +75,8 @@ const Cart = () => {
                     ${totalCarrito}
                   </Th>
                 </Tr>
-                </>
-              )}
+              </>
+            )}
           </Tfoot>
         </Table>
       </TableContainer>
