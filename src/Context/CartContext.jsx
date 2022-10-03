@@ -8,16 +8,14 @@ const CartProvider = ({ children }) => {
   const [totalCarrito, setTotalCarrito] = useState(0);
   useEffect(() => {
     let cantidad = 0;
-    let totalCarrito=0;
-    carrito.forEach((producto) => (
-      cantidad = cantidad + producto.cantidad
-      ));
-      setCantidad(cantidad);
-      carrito.forEach((item) => (
-        totalCarrito += item.producto.precio*item.cantidad
-      ));
-      setTotalCarrito(totalCarrito);
-    }, [carrito]);
+    let totalCarrito = 0;
+    carrito.forEach((producto) => (cantidad = cantidad + producto.cantidad));
+    setCantidad(cantidad);
+    carrito.forEach(
+      (item) => (totalCarrito += item.producto.precio * item.cantidad)
+    );
+    setTotalCarrito(totalCarrito);
+  }, [carrito]);
   const addItem = (producto, cantidad) => {
     const isInCart = carrito.findIndex(
       (itemCart) => itemCart.producto.id === producto.id

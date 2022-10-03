@@ -9,12 +9,12 @@ const MenuNavBar = ({ categorias }) => {
       </Link>
       {categorias.map((categoria) => {
         return (
-          <NavLink style={styles.links} key={categoria.id} to={categoria.route} >
+          <NavLink style={styles.links} key={categoria.id} to={categoria.route}>
             {categoria.nombre}
           </NavLink>
         );
       })}
-   </>
+    </>
   );
 };
 

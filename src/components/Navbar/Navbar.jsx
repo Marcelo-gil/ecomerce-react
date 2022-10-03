@@ -14,7 +14,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from "../../imagenes/logo.png";
 import { CartWidget } from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
-import MenuNavBar from "../../MenuNavBar/MenuNavBar";
+import MenuNavBar from "../MenuNavBar/MenuNavBar";
 
 const categorias = [
   { id: 1, nombre: "Clothes", route: "/category/clothes" },
@@ -76,7 +76,7 @@ export default function NuevoNavbar() {
           direction={"row"}
           spacing={6}
         >
-          <Link to= "/cart">
+          <Link to="/cart">
             <CartWidget />
           </Link>
         </Stack>

@@ -7,17 +7,14 @@ export const CartWidget = () => {
   const { cantidad } = useContext(CartContext);
   return (
     <>
-      <Stack direction={'row'} align="center" mr="15">
-        {cantidad!==0 && (
+      <Stack direction={"row"} align="center" mr="15">
+        {cantidad !== 0 && (
           <>
-            <CarritoIcon/>
+            <CarritoIcon />
             <span>{cantidad}</span>
           </>
-        )
-        }
+        )}
       </Stack>
     </>
   );
 };
-
-
