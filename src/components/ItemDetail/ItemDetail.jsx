@@ -15,13 +15,13 @@ const ItemDetail = ({ item }) => {
     setFinCompra(true);
     addItem(item, count);
     swal(
-      "Agregaste " + count + " " + item.nombre + " al Carrito",
+      "Agregaste " + count + " " + item.title + " al Carrito",
       "Atencion!!",
       "success"
     );
   };
 
-  const carouselData = item.imagenArt.map((image) => ({
+  const carouselData = item.images.map((image) => ({
     image,
   }));
 
@@ -51,19 +51,19 @@ const ItemDetail = ({ item }) => {
       >
         <Stack align="center">
           <Text fontSize="1xl" mt="20%" as="b" ml="5%">
-            {item.nombre}
+            {item.title}
           </Text>
         </Stack>
         <Stack align="center">
           <Text fontSize="2xl" mt="10%" as="b">
-            ${item.precio}
+            ${item.price}
           </Text>
         </Stack>
         <Stack align="center">
           <Text fontSize="1xl" as="b" mt={5}>
             Que saber de nuestro producto:
           </Text>
-          <Text mt="5%">{item.descripcion}</Text>
+          <Text mt="5%">{item.description}</Text>
         </Stack>
       </Box>
 

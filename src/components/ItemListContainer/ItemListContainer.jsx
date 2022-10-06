@@ -3,44 +3,41 @@ import "../../css/main.css";
 import ItemList from "../ItemList/ItemList";
 import { SimpleGrid, Spinner, Stack, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import { API } from "../../utils/api";
-import { getProducto } from "../../utils/producto";
-
-const getItems = async (id) => {
-  const url = id ? `${API.CATEGORY}${id}/products` : API.LIST;
-  const response = await fetch(url);
-  const informacion = await response.json();
-  let productosApi = [];
-  informacion.forEach((item) => {
-    productosApi.push(getProducto(item));
-  });
-  return productosApi;
-};
+import { db } from "../../firebase/firebase";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const idsCategorias = {
-  clothes: 1,
-  electronics: 2,
-  furniture: 3,
-  shoes: 4,
-  others: 5,
+  electronics: 1,
+  jewelery: 2,
+  mens_clothing: 3,
+  womens_clothing: 4,
 };
 
 const ItemListContainer = ({ greeting, onItemClick }) => {
   const { idCategoria: nombreCategoria } = useParams();
-
   const idCategoria = idsCategorias[nombreCategoria];
-
   const [misProductos, setListadoProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [error, setError] = useState(false);
   useEffect(() => {
     setLoading(true);
-    getItems(idCategoria)
-      .then((res) => {
-        setListadoProductos(res);
+    const productsCollection = collection(db, "productos");
+    let url = productsCollection;
+    if (idCategoria) {
+      url = query(productsCollection, where("category.id", "==", idCategoria));
+    }
+    getDocs(url)
+      .then((data) => {
+        const lista = data.docs.map((product) => {
+          return {
+            ...product.data(),
+            id: product.id,
+          };
+        });
+        setListadoProductos(lista);
       })
-      .catch((e) => {
-        console.log("No se cumplio la promesa");
+      .catch(() => {
+        setError(true);
       })
       .finally(() => {
         setLoading(false);
@@ -57,6 +54,8 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
       <SimpleGrid minChildWidth="300px" spacing="10px">
         {loading ? (
           <Spinner color="red.500" />
+        ) : error ? (
+          <h1>Ocurrio un error</h1>
         ) : (
           <ItemList misProductos={misProductos} onItemClick={onItemClick} />
         )}

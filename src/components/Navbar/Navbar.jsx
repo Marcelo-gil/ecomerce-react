@@ -17,11 +17,10 @@ import { Link, NavLink } from "react-router-dom";
 import MenuNavBar from "../MenuNavBar/MenuNavBar";
 
 const categorias = [
-  { id: 1, nombre: "Clothes", route: "/category/clothes" },
-  { id: 2, nombre: "Electronics", route: "/category/electronics" },
-  { id: 3, nombre: "Furniture", route: "/category/furniture" },
-  { id: 4, nombre: "Shoes", route: "/category/shoes" },
-  { id: 5, nombre: "Others", route: "/category/others" },
+  { id: 1, nombre: "Electronics", route: "/category/electronics" },
+  { id: 2, nombre: "Jewelery", route: "/category/jewelery" },
+  { id: 3, nombre: "Men's clothing", route: "/category/mens_clothing" },
+  { id: 4, nombre: "Women's clothing", route: "/category/womens_clothing" },
 ];
 
 export default function NuevoNavbar() {

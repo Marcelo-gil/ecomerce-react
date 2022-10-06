@@ -5,7 +5,7 @@ const ItemList = ({ misProductos, onItemClick }) => {
     <>
       {misProductos.map((product, i) => (
         <Item
-          key={`${product.sku}-${i}`}
+          key={`${product.id}-${i}`}
           producto={product}
           onItemClick={onItemClick}
         />

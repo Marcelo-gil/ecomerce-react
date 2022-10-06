@@ -7,12 +7,12 @@ const CartItem = ({ item, removeItem }) => {
     <>
       <Tr>
         <Td>
-          <Image src={producto.imagenArt[0]} alt="Card Image" boxSize="50px" />
+          <Image src={producto.images[0]} alt="Card Image" boxSize="50px" />
         </Td>
-        <Td>{producto.nombre}</Td>
+        <Td>{producto.title}</Td>
         <Td isNumeric>{cantidad}</Td>
-        <Td isNumeric>${producto.precio}</Td>
-        <Td isNumeric>${producto.precio * cantidad}</Td>
+        <Td isNumeric>${producto.price}</Td>
+        <Td isNumeric>${producto.price * cantidad}</Td>
         <Td textAlign="center">
           <Button
             leftIcon={<DeleteIcon textAlign="center" />}

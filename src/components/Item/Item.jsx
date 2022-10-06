@@ -6,7 +6,7 @@ const Item = ({ producto }) => {
     <>
       <Link to={`/item/${producto.id}`}>
         <Box
-          w="300px"
+          w="320px"
           h="450px"
           rounded="20px"
           overflow="hidden"
@@ -15,7 +15,7 @@ const Item = ({ producto }) => {
           ml={10}
         >
           <Image
-            src={producto.imagenArt[0]}
+            src={producto.images[0]}
             alt="Card Image"
             boxSize="300px"
             mt="10%"
@@ -23,12 +23,12 @@ const Item = ({ producto }) => {
           />
           <Stack align="center">
             <Text fontSize="1xl" mt="10%" as="b">
-              {producto.nombre}
+              {producto.title}
             </Text>
           </Stack>
           <Stack align="center">
             <Text fontSize="1xl" mt="5%" as="b">
-              ${producto.precio}
+              ${producto.price}
             </Text>
           </Stack>
         </Box>
