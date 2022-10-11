@@ -5,6 +5,7 @@ import Cart from "./components/CartView/CartView";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartProvider from "./Context/CartContext";
 import Navbar from "./components/Navbar/Navbar";
+import CartFinCompra from "./components/CartFinCompra/CartFinCompra";
 
 const mensaje = "Tu tienda de moda online!!!";
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/form" element={<CartFinCompra/>} />
           </Routes>
         </ChakraProvider>
       </CartProvider>

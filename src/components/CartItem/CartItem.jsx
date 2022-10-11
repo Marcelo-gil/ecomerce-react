@@ -9,7 +9,9 @@ const CartItem = ({ item, removeItem }) => {
         <Td>
           <Image src={producto.images[0]} alt="Card Image" boxSize="50px" />
         </Td>
-        <Td>{producto.title}</Td>
+        <Td >
+            {producto.title}
+        </Td>
         <Td isNumeric>{cantidad}</Td>
         <Td isNumeric>${producto.price}</Td>
         <Td isNumeric>${producto.price * cantidad}</Td>
