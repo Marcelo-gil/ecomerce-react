@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import "../../css/main.css";
-import ItemList from "../ItemList/ItemList";
+import ItemList from "./ItemList/ItemList";
 import { SimpleGrid, Spinner, Stack, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";

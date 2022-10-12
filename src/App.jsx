@@ -1,11 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import Cart from "./components/CartView/CartView";
+import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./containers/CartView/CartView";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CartProvider from "./Context/CartContext";
+import CartProvider from "./context/CartContext";
 import Navbar from "./components/Navbar/Navbar";
-import CartFinCompra from "./components/CartFinCompra/CartFinCompra";
+import CartFinCompra from "./containers/CartFinCompra/CartFinCompra";
 
 const mensaje = "Tu tienda de moda online!!!";
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
             />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/form" element={<CartFinCompra/>} />
+            <Route path="/cart/confirmar" element={<CartFinCompra/>} />
           </Routes>
         </ChakraProvider>
       </CartProvider>

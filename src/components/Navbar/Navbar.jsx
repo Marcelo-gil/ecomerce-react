@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from "../../imagenes/logo.png";
-import { CartWidget } from "../CartWidget/CartWidget";
+import { CartWidget } from "../Cart/CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
 import MenuNavBar from "../MenuNavBar/MenuNavBar";
 
