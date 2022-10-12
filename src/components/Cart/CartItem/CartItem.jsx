@@ -9,9 +9,7 @@ const CartItem = ({ item, removeItem }) => {
         <Image src={producto.images[0]} alt="Card Image" boxSize="50px" />
       </Td>
       <Td>
-        <Text>
-          {producto.title}
-        </Text>
+        <Text>{producto.title}</Text>
       </Td>
       <Td isNumeric>{cantidad}</Td>
       <Td isNumeric>${producto.price}</Td>
@@ -24,7 +22,7 @@ const CartItem = ({ item, removeItem }) => {
           Borrar
         </Button>
       </Td>
-    </Tr>    
+    </Tr>
   );
 };
 

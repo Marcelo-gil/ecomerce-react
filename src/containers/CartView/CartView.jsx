@@ -12,7 +12,7 @@ import {
   TableContainer,
   Button,
   Text,
-  Center,  
+  Center,
 } from "@chakra-ui/react";
 
 const Cart = () => {
@@ -48,7 +48,9 @@ const Cart = () => {
                 <Tr>
                   <Th boxSize="50px"></Th>
                   <Th>
-                    <Text fontSize="20px">No quedan Articulos en el Carrito</Text>
+                    <Text fontSize="20px">
+                      No quedan Articulos en el Carrito
+                    </Text>
                     <Link to="/">
                       <Button colorScheme="blackAlpha" mt="5">
                         Volver a la tienda
@@ -70,10 +72,14 @@ const Cart = () => {
                   <Tr>
                     <Th boxSize="50px"></Th>
                     <Th>
-                      <Button onClick={() => {
-                          clear(); 
-                          navigate('/');
-                      }}>Vaciar Carrito</Button>                                    
+                      <Button
+                        onClick={() => {
+                          clear();
+                          navigate("/");
+                        }}
+                      >
+                        Vaciar Carrito
+                      </Button>
                       <Link to="/cart/confirmar">
                         <Button ml="5">Finalizar Compra</Button>
                       </Link>
@@ -85,16 +91,13 @@ const Cart = () => {
                     <Th fontSize="20px" isNumeric>
                       ${totalCarrito}
                     </Th>
-                  </Tr>                
+                  </Tr>
                 </>
               )}
             </Tfoot>
           </Table>
-        </TableContainer>        
+        </TableContainer>
       </Center>
-      {/* <Center>
-        
-      </Center> */}
     </>
   );
 };

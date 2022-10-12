@@ -25,7 +25,7 @@ const App = () => {
             />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/cart/confirmar" element={<CartFinCompra/>} />
+            <Route path="/cart/confirmar" element={<CartFinCompra />} />
           </Routes>
         </ChakraProvider>
       </CartProvider>
