@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CarritoIcon from "@mui/icons-material/ShoppingCart";
-import { CartContext } from "../../../contextnew/CartContext";
+import { CartContext } from "../../../context/CartContext";
 import { Stack } from "@chakra-ui/react";
 
 export const CartWidget = () => {
