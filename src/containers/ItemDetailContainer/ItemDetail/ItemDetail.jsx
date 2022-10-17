@@ -3,7 +3,7 @@ import ItemCount from "../../../components/ItemCount/ItemCount";
 import swal from "sweetalert";
 import { Text, Stack, Box, Badge, Button } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { CartContext } from "../../../context/CartContext";
+import { CartContext } from "../../../contextnew/CartContext";
 import { Carousel } from "react-carousel-minimal";
 
 const ItemDetail = ({ item }) => {

@@ -10,7 +10,7 @@ import {
 import { FormControl, FormLabel, Input, Center } from "@chakra-ui/react";
 import { useNavigate, Navigate } from "react-router-dom";
 import swal from "sweetalert";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../contextnew/CartContext";
 import { db } from "../../firebase/firebase";
 import {
   collection,
