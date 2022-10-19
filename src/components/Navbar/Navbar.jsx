@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import {
   Box,
   Flex,
@@ -9,22 +9,49 @@ import {
   useColorModeValue,
   Image,
   useDisclosure,
+  Spinner,
+  Center,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from "../../imagenes/logo.png";
 import { CartWidget } from "../Cart/CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
 import MenuNavBar from "../MenuNavBar/MenuNavBar";
-
-const categorias = [
-  { id: 1, nombre: "Electronics", route: "/category/electronics" },
-  { id: 2, nombre: "Jewelery", route: "/category/jewelery" },
-  { id: 3, nombre: "Men's clothing", route: "/category/mens_clothing" },
-  { id: 4, nombre: "Women's clothing", route: "/category/womens_clothing" },
-];
+import { db } from "../../firebase/firebase";
+import { getDocs, collection } from "firebase/firestore";
+/* const categorias = [
+  { id: 1, nombre: "Electronica", route: "/category/electronics" },
+  { id: 2, nombre: "Joyería", route: "/category/jewelery" },
+  { id: 3, nombre: "Ropa de Hombre", route: "/category/mens_clothing" },
+  { id: 4, nombre: "Ropa de mujer", route: "/category/womens_clothing" },
+]; */
 
 export default function NuevoNavbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const [categorias, setCategorias] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    const categoryCollection = collection(db, "category");
+    let url = categoryCollection;
+    getDocs(url)
+      .then((data) => {
+        const lista = data.docs.map((category) => {
+          return {
+            ...category.data(),
+          };
+        });
+        setCategorias(lista);
+      })
+      .catch(() => {
+        setError(true);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <Box>
       <Flex
@@ -66,7 +93,7 @@ export default function NuevoNavbar() {
             />
           </Link>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
+            <DesktopNav categorias={categorias} />
           </Flex>
         </Flex>
         <Stack
@@ -80,15 +107,24 @@ export default function NuevoNavbar() {
           </Link>
         </Stack>
       </Flex>
-
+      {loading ? (
+          <>
+            <Center>
+              <Spinner color="red.500" />
+            </Center>
+          </>
+        ) : error ? (
+          <h1>Ocurrio un error</h1>
+        ) : (
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav categorias = {categorias}/>
       </Collapse>
+       )}
     </Box>
   );
 }
 
-const DesktopNav = () => {
+const DesktopNav = ({categorias}) => {
   return (
     <Stack direction={"row"} spacing={4}>
       <MenuNavBar categorias={categorias} />
@@ -96,7 +132,7 @@ const DesktopNav = () => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({categorias}) => {
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}

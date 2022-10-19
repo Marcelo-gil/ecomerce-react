@@ -10,10 +10,12 @@ const Item = ({ producto }) => {
           h="450px"
           rounded="20px"
           overflow="hidden"
-          bg={producto.stock < 1 ? "gray.700" : "gray.100"}
+          bg={producto.stock < 1 ? "gray" : "gray.100"}
           mt={10}
           ml={10}
+          align="center"
         >
+          {producto.stock < 1 && <Text color={"red"} bg="black">Sin Stock</Text>}
           <Image
             src={producto.images[0]}
             alt="Card Image"

@@ -1,22 +1,22 @@
 import { React, useState, useEffect } from "react";
-import ItemDetail from "./ItemDetail/ItemDetail";
 import { SimpleGrid, Spinner, Center } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { doc, getDoc, collection } from "firebase/firestore";
+import OrdenView from "./OrdenView";
 
-const ItemDetailContainer = () => {
+const MiOrden = () => {
   const { id } = useParams();
-  const [miProducto, setProducto] = useState({});
+  const [miOrden, setOrden] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   useEffect(() => {
-    const productCollection = collection(db, "productos");
-    const refDoc = doc(productCollection, id);
+    const ordenCollection = collection(db, "ventas");
+    const refDoc = doc(ordenCollection, id);
     getDoc(refDoc)
       .then((res) => {
         setLoading(false);
-        setProducto({ id: res.id, ...res.data() });
+        setOrden({ id: res.id, ...res.data() });
       })
       .catch(() => {
         setError(true);
@@ -37,11 +37,11 @@ const ItemDetailContainer = () => {
         ) : error ? (
           <h1>Ocurrio un error</h1>
         ) : (
-          <ItemDetail item={miProducto} idArt={id} />
+          <OrdenView items={miOrden.items} totalOrden={miOrden.total} idArt={id} />
         )}
       </SimpleGrid>
     </>
   );
 };
 
-export default ItemDetailContainer;
+export default MiOrden;

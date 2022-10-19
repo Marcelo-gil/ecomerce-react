@@ -29,7 +29,7 @@ const ItemDetail = ({ item }) => {
     <>
       <Box
         rounded="20px"
-        bg={item.stock < 1 ? "gray.700" : "gray.100"}
+        bg={item.stock < 1 ? "gray" : "gray.100"}
         mt={10}
         ml="5"
         mr="5"
@@ -44,7 +44,7 @@ const ItemDetail = ({ item }) => {
       <Box
         rounded="20px"
         overflow="scroll"
-        bg={item.stock < 1 ? "gray.700" : "gray.100"}
+        bg={item.stock < 1 ? "gray" : "gray.100"}
         mt={10}
         ml="5"
         mr="5"
@@ -72,23 +72,21 @@ const ItemDetail = ({ item }) => {
         align="center"
         mt={10}
         overflow="hidden"
-        bg={item.stock < 1 ? "gray.700" : "gray.100"}
+        bg={item.stock < 1 ? "gray" : "gray.100"}
         ml="5"
         mr="5"
       >
-        <Stack align="center" mt={10}>
-          {item.stock > 0 ? (
+        {item.stock > 0 ? (
+          <Stack align="center" mt={10}>
             <Text fontSize="20px" color="green" as="b" ml="8%">
               Stock Disponible
             </Text>
-          ) : (
-            <Text as="s" ml="10">
-              Sin Stock
-            </Text>
-          )}
-        </Stack>
+          </Stack>
+        ) : (
+          <Text color={"red"} bg="black">Sin Stock</Text>
+        )}
         <Stack align="center" mt="20">
-          <Badge variant="solid" colorScheme="green" rounded="full" px={2}>
+          <Badge as="s" variant="solid" colorScheme="green" rounded="full" px={2}>
             Stock: {item.stock}
           </Badge>
         </Stack>

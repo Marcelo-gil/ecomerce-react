@@ -70,6 +70,15 @@ const Cart = () => {
               ) : (
                 <>
                   <Tr>
+                  <Th></Th>
+                  <Th fontSize="20px" >
+                      <Center>
+                        Total
+                        ${totalCarrito}
+                      </Center>
+                    </Th>
+                  </Tr>
+                  <Tr>
                     <Th boxSize="50px"></Th>
                     <Th>
                       <Button
@@ -85,12 +94,12 @@ const Cart = () => {
                       </Link>
                     </Th>
                     <Th></Th>
-                    <Th fontSize="20px" isNumeric>
+{/*                     <Th fontSize="20px" isNumeric>
                       Total
                     </Th>
                     <Th fontSize="20px" isNumeric>
                       ${totalCarrito}
-                    </Th>
+                    </Th> */}
                   </Tr>
                 </>
               )}

@@ -133,7 +133,11 @@ const CartFinCompra = () => {
 
   return totalCarrito !== 0 ? (
     loading ? (
-      <Spinner color="red.500" />
+      <>
+        <Center>
+          <Spinner color="red.500" />
+        </Center>
+      </>
     ) : (
       <>
         <Center>

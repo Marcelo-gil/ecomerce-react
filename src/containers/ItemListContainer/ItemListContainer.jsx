@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "../../css/main.css";
 import ItemList from "./ItemList/ItemList";
-import { SimpleGrid, Spinner, Stack, Text } from "@chakra-ui/react";
+import { SimpleGrid, Spinner, Stack, Text, Center } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
@@ -53,7 +53,11 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
       </Stack>
       <SimpleGrid minChildWidth="300px" spacing="10px">
         {loading ? (
-          <Spinner color="red.500" />
+          <>
+            <Center>
+              <Spinner color="red.500" />
+            </Center>
+          </>
         ) : error ? (
           <h1>Ocurrio un error</h1>
         ) : (
