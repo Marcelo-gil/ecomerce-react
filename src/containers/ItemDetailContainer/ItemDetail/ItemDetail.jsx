@@ -83,10 +83,18 @@ const ItemDetail = ({ item }) => {
             </Text>
           </Stack>
         ) : (
-          <Text color={"red"} bg="black">Sin Stock</Text>
+          <Text color={"red"} bg="black">
+            Sin Stock
+          </Text>
         )}
         <Stack align="center" mt="20">
-          <Badge as="s" variant="solid" colorScheme="green" rounded="full" px={2}>
+          <Badge
+            as="s"
+            variant="solid"
+            colorScheme="green"
+            rounded="full"
+            px={2}
+          >
             Stock: {item.stock}
           </Badge>
         </Stack>

@@ -13,8 +13,8 @@ import {
 } from "@chakra-ui/react";
 import ItemOrden from "./ItemOrden";
 
-const OrdenView = ({items, totalOrden, idArt}) => {
-  console.log(items)
+const OrdenView = ({ items, totalOrden, idArt }) => {
+  console.log(items);
   return (
     <>
       <Center>
@@ -32,37 +32,30 @@ const OrdenView = ({items, totalOrden, idArt}) => {
             <Tbody>
               {items &&
                 items.map((item) => (
-                  <ItemOrden
-                    item={item}
-                    key={item.producto.id}
-                  />
+                  <ItemOrden item={item} key={item.producto.id} />
                 ))}
             </Tbody>
             <Tfoot>
-
-                <>
-                  <Tr>
+              <>
+                <Tr>
                   <Th></Th>
-                  <Th fontSize="20px" >
-                      <Center>
-                        Total
-                        ${totalOrden}
-                      </Center>
-                    </Th>
-                  </Tr>
-                  <Tr>
-                    <Th boxSize="50px"></Th>
-                    <Th>
-                        <Center>
-                            <Link to="/">
-                                <Button colorScheme="blackAlpha" mt="5">
-                                    Volver a la tienda
-                                </Button>
-                            </Link>
-                        </Center>
-                    </Th>
-                  </Tr>
-                </>
+                  <Th fontSize="20px">
+                    <Center>Total ${totalOrden}</Center>
+                  </Th>
+                </Tr>
+                <Tr>
+                  <Th boxSize="50px"></Th>
+                  <Th>
+                    <Center>
+                      <Link to="/">
+                        <Button colorScheme="blackAlpha" mt="5">
+                          Volver a la tienda
+                        </Button>
+                      </Link>
+                    </Center>
+                  </Th>
+                </Tr>
+              </>
             </Tfoot>
           </Table>
         </TableContainer>

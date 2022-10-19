@@ -4,7 +4,9 @@ export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   /* Obtengo carrito del storage o creo uno vacio*/
-  const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) ??[]);
+  const [carrito, setCarrito] = useState(
+    JSON.parse(localStorage.getItem("carrito")) ?? []
+  );
   const [cantidad, setCantidad] = useState(0);
   const [totalCarrito, setTotalCarrito] = useState(0);
   useEffect(() => {

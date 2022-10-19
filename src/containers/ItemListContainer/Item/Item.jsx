@@ -15,7 +15,11 @@ const Item = ({ producto }) => {
           ml={10}
           align="center"
         >
-          {producto.stock < 1 && <Text color={"red"} bg="black">Sin Stock</Text>}
+          {producto.stock < 1 && (
+            <Text color={"red"} bg="black">
+              Sin Stock
+            </Text>
+          )}
           <Image
             src={producto.images[0]}
             alt="Card Image"

@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from "react";
+import { React, useState, useEffect } from "react";
 import {
   Box,
   Flex,
@@ -108,23 +108,23 @@ export default function NuevoNavbar() {
         </Stack>
       </Flex>
       {loading ? (
-          <>
-            <Center>
-              <Spinner color="red.500" />
-            </Center>
-          </>
-        ) : error ? (
-          <h1>Ocurrio un error</h1>
-        ) : (
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav categorias = {categorias}/>
-      </Collapse>
-       )}
+        <>
+          <Center>
+            <Spinner color="red.500" />
+          </Center>
+        </>
+      ) : error ? (
+        <h1>Ocurrio un error</h1>
+      ) : (
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav categorias={categorias} />
+        </Collapse>
+      )}
     </Box>
   );
 }
 
-const DesktopNav = ({categorias}) => {
+const DesktopNav = ({ categorias }) => {
   return (
     <Stack direction={"row"} spacing={4}>
       <MenuNavBar categorias={categorias} />
@@ -132,7 +132,7 @@ const DesktopNav = ({categorias}) => {
   );
 };
 
-const MobileNav = ({categorias}) => {
+const MobileNav = ({ categorias }) => {
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}

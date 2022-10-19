@@ -37,7 +37,11 @@ const MiOrden = () => {
         ) : error ? (
           <h1>Ocurrio un error</h1>
         ) : (
-          <OrdenView items={miOrden.items} totalOrden={miOrden.total} idArt={id} />
+          <OrdenView
+            items={miOrden.items}
+            totalOrden={miOrden.total}
+            idArt={id}
+          />
         )}
       </SimpleGrid>
     </>

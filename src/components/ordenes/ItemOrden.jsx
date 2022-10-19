@@ -1,5 +1,5 @@
 import React from "react";
-import {  Td, Tr, Image, Text } from "@chakra-ui/react";
+import { Td, Tr, Image, Text } from "@chakra-ui/react";
 
 const ItemOrden = ({ item }) => {
   const { producto, cantidad } = item;
