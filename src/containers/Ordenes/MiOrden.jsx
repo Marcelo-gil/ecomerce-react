@@ -3,7 +3,7 @@ import { SimpleGrid, Spinner, Center } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { doc, getDoc, collection } from "firebase/firestore";
-import OrdenView from "./OrdenView";
+import OrdenTable from "../../components/ordenes/OrdenTable";
 
 const MiOrden = () => {
   const { id } = useParams();
@@ -37,10 +37,10 @@ const MiOrden = () => {
         ) : error ? (
           <h1>Ocurrio un error</h1>
         ) : (
-          <OrdenView
+          <OrdenTable
             items={miOrden.items}
             totalOrden={miOrden.total}
-            idArt={id}
+            idOrden={id}
           />
         )}
       </SimpleGrid>

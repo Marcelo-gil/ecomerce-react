@@ -2,24 +2,28 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import {
   Table,
+  Text,
   Thead,
   Tbody,
   Tfoot,
   Tr,
   Th,
+  TableCaption,
   TableContainer,
   Button,
   Center,
 } from "@chakra-ui/react";
 import ItemOrden from "./ItemOrden";
 
-const OrdenView = ({ items, totalOrden, idArt }) => {
+const OrdenTable = ({ items, totalOrden, idOrden }) => {
   console.log(items);
   return (
     <>
       <Center>
         <TableContainer maxWidth="100%">
-          <Table size="sm" variant="striped" colorScheme="teal">
+          <Text as='b' mt="5">ID de Compra: {idOrden}</Text>
+          <Table mt="5" size="sm" variant="striped" colorScheme="teal">
+          <TableCaption>ID de Compra: {idOrden}</TableCaption>
             <Thead>
               <Tr>
                 <Th>Imagen</Th>
@@ -47,8 +51,12 @@ const OrdenView = ({ items, totalOrden, idArt }) => {
                   <Th boxSize="50px"></Th>
                   <Th>
                     <Center>
-                      <Link to="/">
+                      <Link to="/order">
                         <Button colorScheme="blackAlpha" mt="5">
+                          Otra Consulta
+                        </Button>
+                      </Link>                      <Link to="/">
+                        <Button colorScheme="blackAlpha" ml="5" mt="5">
                           Volver a la tienda
                         </Button>
                       </Link>
@@ -64,4 +72,4 @@ const OrdenView = ({ items, totalOrden, idArt }) => {
   );
 };
 
-export default OrdenView;
+export default OrdenTable;

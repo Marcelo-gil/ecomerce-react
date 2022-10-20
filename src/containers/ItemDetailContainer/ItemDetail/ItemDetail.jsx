@@ -89,7 +89,6 @@ const ItemDetail = ({ item }) => {
         )}
         <Stack align="center" mt="20">
           <Badge
-            as="s"
             variant="solid"
             colorScheme="green"
             rounded="full"

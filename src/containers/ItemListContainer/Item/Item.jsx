@@ -7,7 +7,7 @@ const Item = ({ producto }) => {
       <Link to={`/item/${producto.id}`}>
         <Box
           w="320px"
-          h="450px"
+          h="500px"
           rounded="20px"
           overflow="hidden"
           bg={producto.stock < 1 ? "gray" : "gray.100"}

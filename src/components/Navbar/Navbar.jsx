@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import {
   Box,
+  Button,
   Flex,
   Text,
   IconButton,
@@ -102,9 +103,16 @@ export default function NuevoNavbar() {
           direction={"row"}
           spacing={6}
         >
+          <>
+          <Link to="/order">
+            <Button>
+              Consultar Orden
+            </Button>
+          </Link>
           <Link to="/cart">
             <CartWidget />
           </Link>
+          </>
         </Stack>
       </Flex>
       {loading ? (
