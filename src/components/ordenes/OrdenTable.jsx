@@ -20,7 +20,7 @@ const OrdenTable = ({ items, totalOrden, idOrden }) => {
     <>
       <Center>
         <TableContainer bg="gray.100" maxWidth="100%">
-          <Text as="b" mt="5" bg="cyan.500">
+          <Text as="b" mt="5">
             ID de Compra: {idOrden}
           </Text>
           <Table mt="5" size="sm" variant="striped" colorScheme="teal">
@@ -45,24 +45,22 @@ const OrdenTable = ({ items, totalOrden, idOrden }) => {
                 <Tr>
                   <Th></Th>
                   <Th fontSize="20px">
-                    <Center>Total ${totalOrden}</Center>
+                    <Text>Total ${totalOrden}</Text>
                   </Th>
                 </Tr>
                 <Tr>
                   <Th boxSize="50px"></Th>
                   <Th>
-                    <Center>
-                      <Link to="/order">
-                        <Button colorScheme="blackAlpha" mt="5">
-                          Otra Consulta
-                        </Button>
-                      </Link>{" "}
-                      <Link to="/">
-                        <Button colorScheme="blackAlpha" ml="5" mt="5">
-                          Volver a la tienda
-                        </Button>
-                      </Link>
-                    </Center>
+                    <Link to="/order">
+                      <Button colorScheme="blackAlpha" mt="5">
+                        Otra Consulta
+                      </Button>
+                    </Link>{" "}
+                    <Link to="/">
+                      <Button colorScheme="blackAlpha" ml="5" mt="5">
+                        Volver a la tienda
+                      </Button>
+                    </Link>
                   </Th>
                 </Tr>
               </>

@@ -7,6 +7,7 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
     Home con todos los productos
     Categorías con acceso a los productos de la misma
     Carrito
+	Consulta de Ordenes
     Detalle de Productos
 
 El usuario puede acceder al detalle del producto haciendo click en la foto del mismo, en donde encontrara 3 imágenes, nombre, precio, descripción, stock disponible y la posibilidad de agregar productos al carrito o volver a la tienda.
@@ -22,11 +23,36 @@ https://drive.google.com/file/d/1nOq6pyrib68VGPYJdDiGLogbA7t1pnX-/view?usp=shari
 El inicio local se puede ver en nuestro navegador en la dirección http://localhost:3000.
 Cualquier modificación en el código, se verá reflejado aquí.
 
-# Api
+# Firebase
 
-Se está utilizando la Api de https://api.escuelajs.co/api/v1/ para acceder a los productos (esta api tiene una falla, en general no coinciden las fotos con el nombre de los productos)
-(originalmente usaba "fakestoreapi.com" pero esta caída)
+Esta App usa una base de datos Cloud Firestore (NoSQL) que cuenta con 3 colecciones 
 
+1. Category
+    * id
+	* name
+	* route
+2. Productos
+	* category
+	* description
+	* images
+	* price
+	* initial
+	* stock
+	* title
+3. Ventas
+	* comprador
+	* date
+	* items
+	* total
+
+# Librerías usadas
+
+	* Firebase: explicado arriba
+ 	* Chakra UI: (emotion/react, emotion/styled, framer-motion) esta biblioteca se aprovecho para acelerar los tiempos de desarrollo y garantizar el diseño responsive de los componentes.
+	* SweetAlert: para mostrar mensajes peronalizados.
+	* mui/icons-material: se utilizó para incorporar el icono del carrito.
+	* react-carousel-minimal: componente para mostrar carousel de fotos no incluido en la librería Chakra
+  
 # Documentación de React
 
 # Getting Started with Create React App
