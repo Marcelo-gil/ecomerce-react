@@ -21,7 +21,7 @@ const Cart = () => {
   return (
     <>
       <Center>
-        <TableContainer maxWidth="100%">
+        <TableContainer maxWidth="100%" bg="gray.100">
           <Table size="sm" variant="striped" colorScheme="teal">
             <Thead>
               <Tr>
@@ -79,6 +79,9 @@ const Cart = () => {
                     <Th boxSize="50px"></Th>
                     <Th>
                       <Button
+                        colorScheme="blackAlpha"
+                        type="Submit"
+                        className="button"
                         onClick={() => {
                           clear();
                           navigate("/");
@@ -87,16 +90,17 @@ const Cart = () => {
                         Vaciar Carrito
                       </Button>
                       <Link to="/cart/confirmar">
-                        <Button ml="5">Finalizar Compra</Button>
+                        <Button 
+                          colorScheme="blackAlpha" 
+                          type="Submit"
+                          className="button"
+                          ml="5"
+                        >
+                          Finalizar Compra
+                        </Button>
                       </Link>
                     </Th>
                     <Th></Th>
-                    {/*                     <Th fontSize="20px" isNumeric>
-                      Total
-                    </Th>
-                    <Th fontSize="20px" isNumeric>
-                      ${totalCarrito}
-                    </Th> */}
                   </Tr>
                 </>
               )}

@@ -20,12 +20,6 @@ import { Link, NavLink } from "react-router-dom";
 import MenuNavBar from "../MenuNavBar/MenuNavBar";
 import { db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
-/* const categorias = [
-  { id: 1, nombre: "Electronica", route: "/category/electronics" },
-  { id: 2, nombre: "Joyería", route: "/category/jewelery" },
-  { id: 3, nombre: "Ropa de Hombre", route: "/category/mens_clothing" },
-  { id: 4, nombre: "Ropa de mujer", route: "/category/womens_clothing" },
-]; */
 
 export default function NuevoNavbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -104,14 +98,12 @@ export default function NuevoNavbar() {
           spacing={6}
         >
           <>
-          <Link to="/order">
-            <Button>
-              Consultar Orden
-            </Button>
-          </Link>
-          <Link to="/cart">
-            <CartWidget />
-          </Link>
+            <Link to="/order">
+              <Button>Consultar Orden</Button>
+            </Link>
+            <Link to="/cart">
+              <CartWidget />
+            </Link>
           </>
         </Stack>
       </Flex>

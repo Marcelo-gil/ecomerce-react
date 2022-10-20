@@ -3,7 +3,6 @@ import { Td, Tr, Image, Text } from "@chakra-ui/react";
 
 const ItemOrden = ({ item }) => {
   const { producto, cantidad } = item;
-  /* console.log(producto); */
   return (
     <Tr>
       <Td>

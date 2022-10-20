@@ -16,14 +16,15 @@ import {
 import ItemOrden from "./ItemOrden";
 
 const OrdenTable = ({ items, totalOrden, idOrden }) => {
-  console.log(items);
   return (
     <>
       <Center>
-        <TableContainer maxWidth="100%">
-          <Text as='b' mt="5">ID de Compra: {idOrden}</Text>
+        <TableContainer bg="gray.100" maxWidth="100%">
+          <Text as="b" mt="5" bg="cyan.500">
+            ID de Compra: {idOrden}
+          </Text>
           <Table mt="5" size="sm" variant="striped" colorScheme="teal">
-          <TableCaption>ID de Compra: {idOrden}</TableCaption>
+            <TableCaption>ID de Compra: {idOrden}</TableCaption>
             <Thead>
               <Tr>
                 <Th>Imagen</Th>
@@ -55,7 +56,8 @@ const OrdenTable = ({ items, totalOrden, idOrden }) => {
                         <Button colorScheme="blackAlpha" mt="5">
                           Otra Consulta
                         </Button>
-                      </Link>                      <Link to="/">
+                      </Link>{" "}
+                      <Link to="/">
                         <Button colorScheme="blackAlpha" ml="5" mt="5">
                           Volver a la tienda
                         </Button>

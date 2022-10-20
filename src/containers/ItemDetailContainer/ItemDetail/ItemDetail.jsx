@@ -38,6 +38,7 @@ const ItemDetail = ({ item }) => {
           data={carouselData}
           thumbnailWidth="150px"
           thumbnails={true}
+          slideImageFit="contain"
         />
       </Box>
 
@@ -88,12 +89,7 @@ const ItemDetail = ({ item }) => {
           </Text>
         )}
         <Stack align="center" mt="20">
-          <Badge
-            variant="solid"
-            colorScheme="green"
-            rounded="full"
-            px={2}
-          >
+          <Badge variant="solid" colorScheme="green" rounded="full" px={2}>
             Stock: {item.stock}
           </Badge>
         </Stack>
