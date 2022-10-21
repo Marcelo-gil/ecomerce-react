@@ -7,7 +7,7 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
     Home con todos los productos
     Categorías con acceso a los productos de la misma
     Carrito
-	Consulta de Ordenes
+    Consulta de Ordenes
     Detalle de Productos
 
 El usuario puede acceder al detalle del producto haciendo click en la foto del mismo, en donde encontrara 3 imágenes, nombre, precio, descripción, stock disponible y la posibilidad de agregar productos al carrito o volver a la tienda.
@@ -25,34 +25,35 @@ Cualquier modificación en el código, se verá reflejado aquí.
 
 # Firebase
 
-Esta App usa una base de datos Cloud Firestore (NoSQL) que cuenta con 3 colecciones 
+Esta App usa una base de datos Cloud Firestore (NoSQL) que cuenta con 3 colecciones
 
 1. Category
-    * id
-	* name
-	* route
+   - id
+   - name
+   - route
 2. Productos
-	* category
-	* description
-	* images
-	* price
-	* initial
-	* stock
-	* title
+   - category
+   - description
+   - images
+   - price
+   - initial
+   - stock
+   - title
 3. Ventas
-	* comprador
-	* date
-	* items
-	* total
+   - comprador
+   - date
+   - items
+   - total
 
 # Librerías usadas
 
-	* Firebase: explicado arriba
- 	* Chakra UI: (emotion/react, emotion/styled, framer-motion) esta biblioteca se aprovecho para acelerar los tiempos de desarrollo y garantizar el diseño responsive de los componentes.
-	* SweetAlert: para mostrar mensajes peronalizados.
-	* mui/icons-material: se utilizó para incorporar el icono del carrito.
-	* react-carousel-minimal: componente para mostrar carousel de fotos no incluido en la librería Chakra
-  
+    * Firebase: explicado arriba
+
+- Chakra UI: (emotion/react, emotion/styled, framer-motion) esta biblioteca se aprovecho para acelerar los tiempos de desarrollo y garantizar el diseño responsive de los componentes.
+- SweetAlert: para mostrar mensajes peronalizados.
+- mui/icons-material: se utilizó para incorporar el icono del carrito.
+- react-carousel-minimal: componente para mostrar carousel de fotos no incluido en la librería Chakra
+
 # Documentación de React
 
 # Getting Started with Create React App

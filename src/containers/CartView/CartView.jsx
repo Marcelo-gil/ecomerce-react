@@ -90,8 +90,8 @@ const Cart = () => {
                         Vaciar Carrito
                       </Button>
                       <Link to="/cart/confirmar">
-                        <Button 
-                          colorScheme="blackAlpha" 
+                        <Button
+                          colorScheme="blackAlpha"
                           type="Submit"
                           className="button"
                           ml="5"

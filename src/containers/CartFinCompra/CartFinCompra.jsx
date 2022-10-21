@@ -117,9 +117,13 @@ const CartFinCompra = () => {
   const validations = {
     nombre: datosComprador.nombre.trim() !== "",
     apellido: datosComprador.apellido.trim() !== "",
-    dni: datosComprador.dni.length !== 0 && !isNaN(datosComprador.dni),
+    dni:
+      datosComprador.dni.length !== 0 &&
+      !isNaN(datosComprador.dni) &&
+      datosComprador.dni.length > 6,
     telefono: datosComprador.telefono.trim() !== "",
-    email: datosComprador.email.trim() !== "",
+    email:
+      datosComprador.email.trim() !== "" && datosComprador.email.includes("@"),
     email2: datosComprador.email.trim() === datosComprador.email2.trim(),
   };
 
