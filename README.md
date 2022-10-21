@@ -4,8 +4,7 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
 
 # Link de Navegación
 
-Links
-[ir a la extension](https://ecommerce-react-gil-marcelo.netlify.app)
+[[ir a la extension](https://ecommerce-react-gil-marcelo.netlify.app)](https://ecommerce-react-gil-marcelo.netlify.app)
 
 ![imagen](./public//imagen.png)
 
@@ -18,9 +17,13 @@ Links
     Detalle de Productos
 
 El usuario puede acceder al detalle del producto haciendo click en la foto del mismo, en donde encontrara 3 imágenes, nombre, precio, descripción, stock disponible y la posibilidad de agregar productos al carrito o volver a la tienda.
+![imagen](./public//imagen2.png)
 El icono del carrito estará visible cuando la cantidad de ítems sea de al menos 1.
 Desde el carrito accede al resumen de la compra y para finalizar debe completar un formulario, en el momento de registrar la venta vuelve a controlar el stock.
+![imagen](./public//imagen3.png)
+![imagen](./public//imagen4.png)
 Guardando el id de compra se puede consultar desde el boton **Consultar Orden**.
+![imagen](./public//imagen5.png)
 
 # Ejecucion del proyecto:
 
@@ -53,8 +56,7 @@ Esta App usa una base de datos Cloud Firestore (NoSQL) que cuenta con 3 coleccio
 
 # Librerías usadas
 
-    * Firebase: explicado arriba
-
+- Firebase: explicado arriba
 - Chakra UI: (emotion/react, emotion/styled, framer-motion) esta biblioteca se aprovecho para acelerar los tiempos de desarrollo y garantizar el diseño responsive de los componentes.
 - SweetAlert: para mostrar mensajes peronalizados.
 - mui/icons-material: se utilizó para incorporar el icono del carrito.
