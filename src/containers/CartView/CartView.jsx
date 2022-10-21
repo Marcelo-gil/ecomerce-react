@@ -1,6 +1,7 @@
 import { React, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import CartItem from "../../components/Cart/CartItem/CartItem";
+import swal from "sweetalert";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Table,
@@ -82,9 +83,22 @@ const Cart = () => {
                         colorScheme="blackAlpha"
                         type="Submit"
                         className="button"
+                        w="160px"
                         onClick={() => {
-                          clear();
-                          navigate("/");
+                          swal({
+                            title: "Estas Seguro de Vaciar el Carrito?",
+                            text: "Una vez vaciado el carrito no podra recuperarlo",
+                            icon: "warning",
+                            buttons: true,
+                            dangerMode: true,
+                          }).then((willDelete) => {
+                            if (willDelete) {
+                              clear();
+                              navigate("/");
+                            } else {
+                              swal("Carrito salvado!");
+                            }
+                          });
                         }}
                       >
                         Vaciar Carrito

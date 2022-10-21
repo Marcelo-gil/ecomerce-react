@@ -2,6 +2,13 @@
 
 Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHouse".
 
+# Link de Navegación
+
+Links
+[ir a la extension](https://ecommerce-react-gil-marcelo.netlify.app)
+
+![imagen](./public//imagen.png)
+
 # Navegación
 
     Home con todos los productos
@@ -11,10 +18,9 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
     Detalle de Productos
 
 El usuario puede acceder al detalle del producto haciendo click en la foto del mismo, en donde encontrara 3 imágenes, nombre, precio, descripción, stock disponible y la posibilidad de agregar productos al carrito o volver a la tienda.
-
-Link al gif de navegación:
-
-https://drive.google.com/file/d/1nOq6pyrib68VGPYJdDiGLogbA7t1pnX-/view?usp=sharing
+El icono del carrito estará visible cuando la cantidad de ítems sea de al menos 1.
+Desde el carrito accede al resumen de la compra y para finalizar debe completar un formulario, en el momento de registrar la venta vuelve a controlar el stock.
+Guardando el id de compra se puede consultar desde el boton **Consultar Orden**.
 
 # Ejecucion del proyecto:
 
@@ -59,18 +65,6 @@ Esta App usa una base de datos Cloud Firestore (NoSQL) que cuenta con 3 coleccio
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 ### `npm test`
 
