@@ -4,7 +4,7 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
 
 # Link de Navegación
 
-[[ir a la extension](https://ecommerce-react-gil-marcelo.netlify.app)](https://ecommerce-react-gil-marcelo.netlify.app)
+[https://ecommerce-react-gil-marcelo.netlify.app](https://ecommerce-react-gil-marcelo.netlify.app)
 
 ![imagen](./public//imagen.png)
 
