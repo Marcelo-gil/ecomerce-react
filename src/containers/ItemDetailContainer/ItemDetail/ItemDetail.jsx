@@ -102,6 +102,16 @@ const ItemDetail = ({ item }) => {
                 </Button>
               </Link>
             </Stack>
+            <Stack align="center" mt="10">
+              <Button
+                onClick={() => navigate(-1)}
+                to="/"
+                colorScheme="blackAlpha"
+                mt="5"
+              >
+                Volver a la tienda
+              </Button>
+            </Stack>
           </>
         ) : (
           <>

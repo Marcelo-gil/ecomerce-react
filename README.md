@@ -6,24 +6,24 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
 
 [https://ecommerce-react-gil-marcelo.netlify.app](https://ecommerce-react-gil-marcelo.netlify.app)
 
-![imagen](./public//imagen.png)
-
 # Navegación
 
-    Home con todos los productos
-    Categorías con acceso a los productos de la misma
-    Carrito
-    Consulta de Ordenes
-    Detalle de Productos
-
-El usuario puede acceder al detalle del producto haciendo click en la foto del mismo, en donde encontrara 3 imágenes, nombre, precio, descripción, stock disponible y la posibilidad de agregar productos al carrito o volver a la tienda.
-![imagen](./public//imagen2.png)
-El icono del carrito estará visible cuando la cantidad de ítems sea de al menos 1.
-Desde el carrito accede al resumen de la compra y para finalizar debe completar un formulario, en el momento de registrar la venta vuelve a controlar el stock.
-![imagen](./public//imagen3.png)
-![imagen](./public//imagen4.png)
-Guardando el id de compra se puede consultar desde el boton **Consultar Orden**.
-![imagen](./public//imagen5.png)
+- Home con todos los productos
+- Categorías con acceso a los productos de la misma
+- Carrito
+- Consulta de Ordenes
+- Detalle de Productos
+  ![imagen](./public//imagen.png)
+  El usuario puede acceder al detalle del producto haciendo click en la foto del mismo, en donde encontrara 3 imágenes, nombre, precio, descripción, stock disponible y la posibilidad de agregar productos al carrito o volver a la tienda.
+  ![imagen](./public//imagen2.png)
+  El icono del carrito estará visible cuando la cantidad de ítems sea de al menos 1.
+  Desde el carrito accede al resumen de la compra y para finalizar debe completar un formulario, en el momento de registrar la venta vuelve a controlar el stock.
+  ![imagen](./public//imagen3.png)
+  ![imagen](./public//imagen4.png)
+  Guardando el id de compra luego se puede consultar desde el boton **Consultar Orden**.
+  ![imagen](./public//imagen6.png)
+  Consulta de Ordenes de compra
+  ![imagen](./public//imagen5.png)
 
 # Ejecucion del proyecto:
 
@@ -56,11 +56,11 @@ Esta App usa una base de datos Cloud Firestore (NoSQL) que cuenta con 3 coleccio
 
 # Librerías usadas
 
-- Firebase: explicado arriba
-- Chakra UI: (emotion/react, emotion/styled, framer-motion) esta biblioteca se aprovecho para acelerar los tiempos de desarrollo y garantizar el diseño responsive de los componentes.
-- SweetAlert: para mostrar mensajes peronalizados.
-- mui/icons-material: se utilizó para incorporar el icono del carrito.
-- react-carousel-minimal: componente para mostrar carousel de fotos no incluido en la librería Chakra
+- [Firebase:](https://firebase.google.com) explicado arriba
+- [Chakra UI:](https://chakra-ui.com/) (emotion/react, emotion/styled, framer-motion) esta biblioteca se aprovecho para acelerar los tiempos de desarrollo y garantizar el diseño responsive de los componentes.
+- [SweetAlert:](https://sweetalert.js.org/) para mostrar mensajes peronalizados.
+- [mui/icons-material:](https://mui.com/material-ui/material-icons/) se utilizó para incorporar el icono del carrito.
+- [react-carousel-minimal:](https://github.com/sahilsaha7773/react-carousel-minimal) componente para mostrar carousel de fotos no incluido en la librería Chakra
 
 # Documentación de React
 

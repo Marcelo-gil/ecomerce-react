@@ -8,7 +8,8 @@ import CartProvider from "./context/CartContext";
 import Navbar from "./components/Navbar/Navbar";
 import CartFinCompra from "./containers/CartFinCompra/CartFinCompra";
 import IngresarOrden from "./containers/Ordenes/IngresarOrden";
-
+import NotFound from "./utils/NotFound";
+import MiFooter from "./components/MiFooter/MiFooter";
 const mensaje = "Tu tienda de moda online!!!";
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <ChakraProvider>
           <Navbar />
           <Routes>
+            <Route path="*" element={<NotFound />} />
             <Route
               path="/"
               element={<ItemListContainer greeting={mensaje} />}
@@ -31,6 +33,7 @@ const App = () => {
             <Route path="/order" element={<IngresarOrden />} />
             <Route path="/order/:id" element={<MiOrden />} />
           </Routes>
+          <MiFooter />
         </ChakraProvider>
       </CartProvider>
     </BrowserRouter>

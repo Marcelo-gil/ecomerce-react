@@ -101,9 +101,11 @@ export default function NuevoNavbar() {
             <Link to="/order">
               <Button>Consultar Orden</Button>
             </Link>
-            <Link to="/cart">
-              <CartWidget />
-            </Link>
+            <Center>
+              <Link to="/cart">
+                <CartWidget />
+              </Link>
+            </Center>
           </>
         </Stack>
       </Flex>
@@ -158,7 +160,16 @@ const MobileNavItem = ({ categoria }) => {
           textDecoration: "none",
         }}
       >
-        <NavLink key={categoria.id} to={categoria.route}>
+        <NavLink
+          key={categoria.id}
+          to={categoria.route}
+          style={({ isActive }) => {
+            return {
+              backgroundColor: "transparent",
+              fontWeight: isActive ? 700 : 400,
+            };
+          }}
+        >
           <Text
             fontWeight={600}
             color={useColorModeValue("gray.600", "gray.200")}
