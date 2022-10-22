@@ -22,7 +22,9 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
   ![imagen](./public//imagen4.png)
   Guardando el id de compra luego se puede consultar desde el boton **Consultar Orden**.
   ![imagen](./public//imagen6.png)
+
   Consulta de Ordenes de compra
+  
   ![imagen](./public//imagen5.png)
 
 # Ejecucion del proyecto:
