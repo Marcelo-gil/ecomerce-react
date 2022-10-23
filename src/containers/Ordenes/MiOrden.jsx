@@ -17,11 +17,9 @@ const MiOrden = () => {
     getDoc(refDoc)
       .then((res) => {
         setLoading(false);
-        res.data() === undefined ? (
-          setError(true)
-        ) : (
-          setOrden({ id: res.id, ...res.data() })
-        )
+        res.data() === undefined
+          ? setError(true)
+          : setOrden({ id: res.id, ...res.data() });
       })
       .catch((e) => {
         swal("Error Buscando Orden!", e.message, "error");
@@ -43,7 +41,9 @@ const MiOrden = () => {
         ) : error ? (
           <>
             <Center>
-              <Text mt="250" as="b" fontSize="5xl">Orden No Encontrada</Text>
+              <Text mt="250" as="b" fontSize="5xl">
+                Orden No Encontrada
+              </Text>
             </Center>
           </>
         ) : (

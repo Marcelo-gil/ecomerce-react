@@ -151,6 +151,7 @@ const CartFinCompra = () => {
             borderWidth="1px"
             borderRadius="lg"
             overflow="hidden"
+            minHeight={750}
           >
             <Center>
               <Text fontWeight="bold" fontSize="2xl">
@@ -230,7 +231,6 @@ const CartFinCompra = () => {
                 colorScheme="blackAlpha"
                 mt="5"
                 ml="5"
-                
               >
                 Cancelar
               </Button>

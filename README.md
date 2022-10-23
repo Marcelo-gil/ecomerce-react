@@ -24,7 +24,7 @@ Ecommerce desarrollado en React en cumplimiento al curso de "React Js de CoderHo
   ![imagen](./public//imagen6.png)
 
   Consulta de Ordenes de compra
-  
+
   ![imagen](./public//imagen5.png)
 
 # Ejecucion del proyecto:

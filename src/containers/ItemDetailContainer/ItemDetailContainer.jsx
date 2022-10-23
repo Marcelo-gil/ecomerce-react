@@ -17,11 +17,9 @@ const ItemDetailContainer = () => {
     getDoc(refDoc)
       .then((res) => {
         setLoading(false);
-        res.data() === undefined ? (
-          setError(true)
-        ) : (
-        setProducto({ id: res.id, ...res.data() })
-      )
+        res.data() === undefined
+          ? setError(true)
+          : setProducto({ id: res.id, ...res.data() });
       })
       .catch((e) => {
         swal("Error Buscando Producto!", e.message, "error");
@@ -43,7 +41,9 @@ const ItemDetailContainer = () => {
         ) : error ? (
           <>
             <Center>
-              <Text mt="250" as="b" fontSize="5xl">Producto No Encontrado</Text>
+              <Text mt="250" as="b" fontSize="5xl">
+                Producto No Encontrado
+              </Text>
             </Center>
           </>
         ) : (
