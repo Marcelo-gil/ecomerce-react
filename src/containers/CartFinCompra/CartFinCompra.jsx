@@ -159,10 +159,11 @@ const CartFinCompra = () => {
             </Center>
             <Stack>
               <FormControl isRequired isInvalid={!validations.nombre}>
-                <FormLabel>Nombre</FormLabel>
+                <FormLabel fontSize="sm">Nombre</FormLabel>
                 <Input
                   type="name"
                   placeholder="Nombre"
+                  fontSize="sm"
                   className="form"
                   name="nombre"
                   onChange={asignaInput}
@@ -170,7 +171,7 @@ const CartFinCompra = () => {
                 <FormErrorMessage>Ingresá un nombre.</FormErrorMessage>
               </FormControl>
               <FormControl isRequired isInvalid={!validations.apellido}>
-                <FormLabel>Apellido</FormLabel>
+                <FormLabel fontSize="sm">Apellido</FormLabel>
                 <Input
                   type="text"
                   placeholder="Apellido"
@@ -181,7 +182,7 @@ const CartFinCompra = () => {
                 <FormErrorMessage>Ingresá un apellido.</FormErrorMessage>
               </FormControl>
               <FormControl isRequired isInvalid={!validations.dni}>
-                <FormLabel>Dni</FormLabel>
+                <FormLabel fontSize="sm">Dni</FormLabel>
                 <Input
                   type="Number"
                   placeholder="Dni"
@@ -192,7 +193,7 @@ const CartFinCompra = () => {
                 <FormErrorMessage>Ingresá un DNI válido</FormErrorMessage>
               </FormControl>
               <FormControl isRequired isInvalid={!validations.telefono}>
-                <FormLabel>Telefono</FormLabel>
+                <FormLabel fontSize="sm">Telefono</FormLabel>
                 <Input
                   type="tel"
                   placeholder="Telefono"
@@ -202,7 +203,7 @@ const CartFinCompra = () => {
                 <FormErrorMessage>Ingresá un teléfono válido</FormErrorMessage>
               </FormControl>
               <FormControl isRequired isInvalid={!validations.email}>
-                <FormLabel>Email</FormLabel>
+                <FormLabel fontSize="sm">Email</FormLabel>
                 <Input
                   type="email"
                   placeholder="Email"
@@ -212,7 +213,7 @@ const CartFinCompra = () => {
                 <FormErrorMessage>Ingresá un email válido</FormErrorMessage>
               </FormControl>
               <FormControl isRequired isInvalid={!validations.email2}>
-                <FormLabel>Reingresar Email</FormLabel>
+                <FormLabel fontSize="sm">Reingresar Email</FormLabel>
                 <Input
                   type="email"
                   placeholder="Email"
@@ -229,7 +230,7 @@ const CartFinCompra = () => {
                 colorScheme="blackAlpha"
                 mt="5"
                 ml="5"
-                w="160px"
+                
               >
                 Cancelar
               </Button>
@@ -242,7 +243,7 @@ const CartFinCompra = () => {
                 disabled={botonDeshabilitado}
                 onClick={finalizarCompra}
               >
-                Finalizar Compra
+                Comprar
               </Button>
             </Center>
           </Box>

@@ -10,8 +10,9 @@ const Footer = () => {
       py="0.75rem"
       width="100%"
       fontSize="0.875rem"
-      position="fixed"
+      mt="5"
       bottom="0"
+      position="fixed"
     >
       <Center>
         <Flex>
