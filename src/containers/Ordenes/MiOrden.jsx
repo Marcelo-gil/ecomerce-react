@@ -1,9 +1,10 @@
 import { React, useState, useEffect } from "react";
-import { SimpleGrid, Spinner, Center } from "@chakra-ui/react";
+import { SimpleGrid, Spinner, Center, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { doc, getDoc, collection } from "firebase/firestore";
 import OrdenTable from "../../components/ordenes/OrdenTable";
+import swal from "sweetalert";
 
 const MiOrden = () => {
   const { id } = useParams();
@@ -16,9 +17,14 @@ const MiOrden = () => {
     getDoc(refDoc)
       .then((res) => {
         setLoading(false);
-        setOrden({ id: res.id, ...res.data() });
+        res.data() === undefined ? (
+          setError(true)
+        ) : (
+          setOrden({ id: res.id, ...res.data() })
+        )
       })
-      .catch(() => {
+      .catch((e) => {
+        swal("Error Buscando Orden!", e.message, "error");
         setError(true);
       })
       .finally(() => {
@@ -35,7 +41,11 @@ const MiOrden = () => {
             </Center>
           </>
         ) : error ? (
-          <h1>Ocurrio un error</h1>
+          <>
+            <Center>
+              <Text mt="250" as="b" fontSize="5xl">Orden No Encontrada</Text>
+            </Center>
+          </>
         ) : (
           <OrdenTable
             items={miOrden.items}

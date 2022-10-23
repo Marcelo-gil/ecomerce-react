@@ -20,6 +20,7 @@ import { Link, NavLink } from "react-router-dom";
 import MenuNavBar from "../MenuNavBar/MenuNavBar";
 import { db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
+import swal from "sweetalert";
 
 export default function NuevoNavbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -39,7 +40,8 @@ export default function NuevoNavbar() {
         });
         setCategorias(lista);
       })
-      .catch(() => {
+      .catch((e) => {
+        swal("Error Buscando Categorias!", e.message, "error");
         setError(true);
       })
       .finally(() => {

@@ -1,9 +1,10 @@
 import { React, useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail/ItemDetail";
-import { SimpleGrid, Spinner, Center } from "@chakra-ui/react";
+import { SimpleGrid, Spinner, Center, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { doc, getDoc, collection } from "firebase/firestore";
+import swal from "sweetalert";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -16,9 +17,14 @@ const ItemDetailContainer = () => {
     getDoc(refDoc)
       .then((res) => {
         setLoading(false);
-        setProducto({ id: res.id, ...res.data() });
+        res.data() === undefined ? (
+          setError(true)
+        ) : (
+        setProducto({ id: res.id, ...res.data() })
+      )
       })
-      .catch(() => {
+      .catch((e) => {
+        swal("Error Buscando Producto!", e.message, "error");
         setError(true);
       })
       .finally(() => {
@@ -35,7 +41,11 @@ const ItemDetailContainer = () => {
             </Center>
           </>
         ) : error ? (
-          <h1>Ocurrio un error</h1>
+          <>
+            <Center>
+              <Text mt="250" as="b" fontSize="5xl">Producto No Encontrado</Text>
+            </Center>
+          </>
         ) : (
           <ItemDetail item={miProducto} idArt={id} />
         )}

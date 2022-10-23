@@ -5,6 +5,7 @@ import { SimpleGrid, Spinner, Stack, Text, Center } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
+import swal from "sweetalert";
 
 const idsCategorias = {
   electronics: 1,
@@ -36,7 +37,8 @@ const ItemListContainer = ({ greeting, onItemClick }) => {
         });
         setListadoProductos(lista);
       })
-      .catch(() => {
+      .catch((e) => {
+        swal("Error Buscando Productos!", e.message, "error");
         setError(true);
       })
       .finally(() => {
