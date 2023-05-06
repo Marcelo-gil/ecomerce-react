@@ -10,7 +10,7 @@ import CartFinCompra from "./containers/CartFinCompra/CartFinCompra";
 import IngresarOrden from "./containers/Ordenes/IngresarOrden";
 import NotFound from "./utils/NotFound";
 import MiFooter from "./components/MiFooter/MiFooter";
-const mensaje = "Tu tienda de moda online!!!";
+const mensaje = "Materiales de Construcción!!!";
 const App = () => {
   return (
     <BrowserRouter>
