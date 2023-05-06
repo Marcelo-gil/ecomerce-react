@@ -8,10 +8,10 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 import swal from "sweetalert";
 
 const idsCategorias = {
-  electronics: 1,
-  jewelery: 2,
-  mens_clothing: 3,
-  womens_clothing: 4,
+  hidrofugos: 1,
+  bolsas: 2,
+  aridos: 3,
+  hierros: 4,
 };
 
 const ItemListContainer = ({ greeting, onItemClick }) => {
